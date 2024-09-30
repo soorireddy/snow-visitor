@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:39:11</sys_created_on>
+        <sys_id>e22b9f40c3851210a7705fd1b4013197</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Create Visit</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_e22b9f40c3851210a7705fd1b4013197</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:39:11</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>

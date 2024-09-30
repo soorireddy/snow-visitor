@@ -2,6 +2,7 @@
     <element db_object_id="1c86fec8c3811210a7705fd1b40131d8" label="Visit" max_length="40" name="x_845458_visitorsa_visit" type="collection">
         <element label="Type" max_length="40" name="type" type="string"/>
         <element label="Visitor" max_length="32" name="visitor" reference="x_845458_visitorsa_visitor" type="reference"/>
+        <element function_definition="glidefunction:concat(visitor.first_name, '', '')" function_field="true" label="Visitor First Name" max_length="10" name="first_name" read_only="true" type="string"/>
         <element label="Host" max_length="40" name="host" type="string"/>
         <element label="End Date" max_length="40" name="end_date" type="glide_date_time"/>
         <element label="Location" max_length="40" name="location" type="string"/>
