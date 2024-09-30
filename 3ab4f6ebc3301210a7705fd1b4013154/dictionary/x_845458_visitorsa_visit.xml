@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="1c86fec8c3811210a7705fd1b40131d8" label="Visit" max_length="40" name="x_845458_visitorsa_visit" type="collection">
+        <element label="Type" max_length="40" name="type" type="string"/>
+        <element label="Visitor" max_length="32" name="visitor" reference="x_845458_visitorsa_visitor" type="reference"/>
+        <element label="Host" max_length="40" name="host" type="string"/>
+        <element label="End Date" max_length="40" name="end_date" type="glide_date_time"/>
+        <element label="Location" max_length="40" name="location" type="string"/>
+        <element label="Start Date" max_length="40" name="start_date" type="glide_date_time"/>
+        <element label="Visit Status" max_length="40" name="visit_status" type="string"/>
+        <index name="index">
+            <element name="visitor"/>
+        </index>
+    </element>
+</database>

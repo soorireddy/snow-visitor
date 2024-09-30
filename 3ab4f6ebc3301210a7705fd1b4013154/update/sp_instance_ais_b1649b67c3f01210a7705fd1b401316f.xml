@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css>$background-primary: #FFFFFF !default;&#13;
+$sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;&#13;
+$border-primary: #8790A1 !default;&#13;
+$border-secondary: #B3B7BC !default;&#13;
+$border-tertiary: #DADDE2 !default;&#13;
+$text-primary: #1D2223 !default;&#13;
+$sp-space--xl: 24px !default;&#13;
+$sp-space--xxl: 32px !default;&#13;
+$sp-space--sm: 8px !default;&#13;
+$sp-space--md: 12px !default;&#13;
+$text-primary: #272822 !default;&#13;
+$link-color: #3C59E7 !default;&#13;
+$brand-primary-opacity: #E3E4F2 !default;&#13;
+&#13;
+h2 {&#13;
+  font-size: 32px;&#13;
+  font-family: inherit;&#13;
+  color: #fff;&#13;
+  color: $text-white;&#13;
+  text-align: left;&#13;
+  margin-bottom: $sp-space--xl !important;&#13;
+}&#13;
+&#13;
+/* For suggestions in typeahead search when ais is enabled */&#13;
+.aisearch {&#13;
+	--now-color--primary-0: $brand-primary-opacity;&#13;
+}&#13;
+&#13;
+/* For suggestions in typeahead search when ais is disabled */&#13;
+.typeahead-popup &gt; .active &gt; a, .typeahead-popup &gt; .active &gt; a:hover, .typeahead-popup &gt; .active &gt; a:focus {&#13;
+	background-color: $brand-primary-opacity;&#13;
+	color: #000;&#13;
+}&#13;
+&#13;
+.hidden-xs {&#13;
+  display: block !important;&#13;
+}&#13;
+&#13;
+form {&#13;
+  height: 46px;&#13;
+  border-radius: $sp-space--sm;&#13;
+}&#13;
+&#13;
+#homepage-search {&#13;
+  margin: 72px 0px 74px 0px !important;&#13;
+  padding-top: 0px !important;&#13;
+  padding-bottom: 0px !important;&#13;
+  div {&#13;
+    padding: 0px !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 768px) {&#13;
+  #homepage-search{&#13;
+    margin-top: 35px !important;&#13;
+    margin-bottom: 116px !important;&#13;
+    padding-left: $sp-space--xxl !important;&#13;
+    padding-right: $sp-space--xxl !important;&#13;
+  }&#13;
+  h2 {&#13;
+    margin-bottom: 17px !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+button {&#13;
+  height: 44px;&#13;
+  color: #717171;&#13;
+  box-shadow: none;&#13;
+  border-bottom-right-radius: $sp-space--sm;&#13;
+  border-top-right-radius: $sp-space--sm;&#13;
+}&#13;
+&#13;
+input {&#13;
+  box-shadow: none;&#13;
+  font-size: 16px;&#13;
+  font-family: inherit;&#13;
+  color: $text-tertiary;&#13;
+  padding: $sp-space--md;&#13;
+  height: 44px;&#13;
+  border-bottom-left-radius: $sp-space--sm;&#13;
+  border-top-left-radius: $sp-space--sm;&#13;
+}&#13;
+&#13;
+button:focus, input:focus {&#13;
+border: 2px solid $link-color;&#13;
+}</css>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">75645b67c3f01210a7705fd1b40131f0</sp_column>
+        <sp_widget display_value="Homepage Search">200fbd96cb20020000f8d856634c9ca1</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 19:52:40</sys_created_on>
+        <sys_id>b1649b67c3f01210a7705fd1b401316f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>How can we help?</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_instance_ais_b1649b67c3f01210a7705fd1b401316f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 20:05:11</sys_updated_on>
+        <title>How can we help?</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"typeahead_search": {
+		"value": "{title: 'Search'}",
+		"displayValue": "{title: 'Search'}"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=b1649b67c3f01210a7705fd1b401316f"/>
+</record_update>

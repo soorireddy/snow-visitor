@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5b14fec4c3811210a7705fd1b40131f8" label="Visitor" max_length="40" name="x_845458_visitorsa_visitor" type="collection">
+        <element label="Phone" max_length="40" name="phone" type="string"/>
+        <element label="Visitor Status" max_length="40" name="visitor_status" type="string"/>
+        <element label="Group" max_length="40" name="group" type="string"/>
+        <element label="Last Name" max_length="40" name="last_name" type="string"/>
+        <element label="First Name" max_length="40" name="first_name" type="string"/>
+        <element label="Visitor Type" max_length="40" name="visitor_type" type="string"/>
+        <element label="Email" max_length="40" name="email" type="string"/>
+    </element>
+</database>
