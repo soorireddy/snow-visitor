@@ -4,12 +4,12 @@
         <attributes/>
         <cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</cat_item>
         <category/>
-        <choice_direction>down</choice_direction>
+        <choice_direction>across</choice_direction>
         <choice_field/>
         <choice_table/>
         <create_roles/>
         <default_html_value/>
-        <default_value/>
+        <default_value>YES</default_value>
         <delete_roles/>
         <delivery_plan/>
         <description/>
@@ -26,7 +26,7 @@
         <help_tag>More information</help_tag>
         <help_text/>
         <hidden>false</hidden>
-        <include_none>false</include_none>
+        <include_none>true</include_none>
         <instructions/>
         <layout>normal</layout>
         <list_table/>
@@ -41,13 +41,13 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>grp_name</name>
-        <order>44</order>
+        <name>existing_visitor</name>
+        <order>25</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Group Name</question_text>
+        <question_text>Existing Visitor</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -75,19 +75,19 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-30 07:08:17</sys_created_on>
-        <sys_id>8388feccc3811210a7705fd1b40131f2</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>grp_name</sys_name>
+        <sys_created_on>2024-09-30 16:33:17</sys_created_on>
+        <sys_id>8c29f018c34d1210a7705fd1b40131ce</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Existing Visitor</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>item_option_new_8388feccc3811210a7705fd1b40131f2</sys_update_name>
+        <sys_update_name>item_option_new_8c29f018c34d1210a7705fd1b40131ce</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 17:40:46</sys_updated_on>
+        <sys_updated_on>2024-09-30 16:44:26</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>6</type>
+        <type>5</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -103,22 +103,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=8388feccc3811210a7705fd1b40131f2"/>
-    <fx_price action="delete_multiple" query="id=8388feccc3811210a7705fd1b40131f2"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=8c29f018c34d1210a7705fd1b40131ce"/>
+    <fx_price action="delete_multiple" query="id=8c29f018c34d1210a7705fd1b40131ce"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>8388feccc3811210a7705fd1b40131f2</id>
+        <id>8c29f018c34d1210a7705fd1b40131ce</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-30 07:08:17</sys_created_on>
-        <sys_id>94a83e00c3c11210a7705fd1b401315c</sys_id>
+        <sys_created_on>2024-09-30 16:33:17</sys_created_on>
+        <sys_id>68f9b4d8c34d1210a7705fd1b4013115</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 07:08:17</sys_updated_on>
+        <sys_updated_on>2024-09-30 16:33:17</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -126,16 +126,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>8388feccc3811210a7705fd1b40131f2</id>
+        <id>8c29f018c34d1210a7705fd1b40131ce</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-30 07:08:17</sys_created_on>
-        <sys_id>5ca83e00c3c11210a7705fd1b401315b</sys_id>
+        <sys_created_on>2024-09-30 16:33:17</sys_created_on>
+        <sys_id>a8f9b4d8c34d1210a7705fd1b4013114</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 07:08:17</sys_updated_on>
+        <sys_updated_on>2024-09-30 16:33:17</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

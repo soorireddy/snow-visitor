@@ -17,7 +17,7 @@
         <label>Pre-Registration</label>
         <order>100</order>
         <record_script/>
-        <sc_cat_item display_value="Access">039c516237b1300054b6a3549dbe5dfc</sc_cat_item>
+        <sc_cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</sc_cat_item>
         <sc_category/>
         <short_description/>
         <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
@@ -27,14 +27,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-28 19:31:48</sys_created_on>
         <sys_id>4f6fcfafc3b01210a7705fd1b401311a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Pre-Registration</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_rectangle_menu_item_4f6fcfafc3b01210a7705fd1b401311a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-28 20:15:08</sys_updated_on>
+        <sys_updated_on>2024-09-30 18:06:58</sys_updated_on>
         <table>sys_user</table>
         <type>sc_cat_item</type>
         <url/>

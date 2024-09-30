@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>500</order>
+        <published_ref/>
+        <question display_value="Visit Type">fb68b28cc3811210a7705fd1b4013177</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 16:20:48</sys_created_on>
+        <sys_id>0c073854c34d1210a7705fd1b4013196</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Recurring</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>question_choice_0c073854c34d1210a7705fd1b4013196</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 16:22:19</sys_updated_on>
+        <text>Recurring</text>
+        <value>RECURRING</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=0c073854c34d1210a7705fd1b4013196"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>question_choice_0c073854c34d1210a7705fd1b4013196</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>500</order><published_ref/><question display_value="Visit Type">fb68b28cc3811210a7705fd1b4013177</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-30 16:20:48</sys_created_on><sys_id>0c073854c34d1210a7705fd1b4013196</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Recurring</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>question_choice_0c073854c34d1210a7705fd1b4013196</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-30 16:22:19</sys_updated_on><text>Recurring</text><value>RECURRING</value></question_choice><fx_price action="delete_multiple" query="id=0c073854c34d1210a7705fd1b4013196"/></record_update>]]></payload>
+        <payload_hash>-1658537068</payload_hash>
+        <record_name>Recurring</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 16:22:19</sys_created_on>
+        <sys_id>4877fcd4c34d1210a7705fd1b401316c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19243bd67810000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 16:22:19</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>0077fcd4da4d12101950b5d7c241436c</update_guid>
+        <update_guid_history>0077fcd4da4d12101950b5d7c241436c:-1658537068,323778d4264d121081fd9eee7b700fb2:-1428450280,3117f0d4bf4d1210a8af9155e108f986:1964668046</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Recurring">57228554c38d1210a7705fd1b40131cf</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 17:09:14</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>431a3af38cfb49e094b09b4963f3e900</sys_id>
+        <sys_metadata>0c073854c34d1210a7705fd1b4013196</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Recurring</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>question_choice_0c073854c34d1210a7705fd1b4013196</sys_update_name>
+        <sys_update_version display_value="question_choice_0c073854c34d1210a7705fd1b4013196">4877fcd4c34d1210a7705fd1b401316c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 17:09:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
