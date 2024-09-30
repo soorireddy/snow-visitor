@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>40</order>
+        <published_ref/>
+        <question display_value="Visitor Status">ed585914c3015210a7705fd1b4013124</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 18:49:50</sys_created_on>
+        <sys_id>54f85954c3015210a7705fd1b401313d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Blocked / Suspended Temp</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>question_choice_54f85954c3015210a7705fd1b401313d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 18:49:50</sys_updated_on>
+        <text>Blocked / Suspended Temp</text>
+        <value>BLOCKED</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=54f85954c3015210a7705fd1b401313d"/>
+</record_update>
