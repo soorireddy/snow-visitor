@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">51045e24c3499210a7705fd1b40131ab</sp_column>
+        <sp_widget display_value="x-we-empty-state">a538a25adf802200ba13a4836bf26359</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 17:45:20</sys_created_on>
+        <sys_id>f1041664c3499210a7705fd1b40131ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_instance_f1041664c3499210a7705fd1b40131ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 17:45:20</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=f1041664c3499210a7705fd1b40131ea"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sp_instance_f1041664c3499210a7705fd1b40131ea</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">51045e24c3499210a7705fd1b40131ab</sp_column><sp_widget display_value="x-we-empty-state">a538a25adf802200ba13a4836bf26359</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-10-01 17:45:20</sys_created_on><sys_id>f1041664c3499210a7705fd1b40131ea</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sp_instance_f1041664c3499210a7705fd1b40131ea</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-10-01 17:45:20</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=f1041664c3499210a7705fd1b40131ea"/></record_update>]]></payload>
+        <payload_hash>-841846456</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 17:45:20</sys_created_on>
+        <sys_id>b9041664c3499210a7705fd1b40131ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192492fc4b90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 17:45:20</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>bd0416647f4992107686d50e738e14eb</update_guid>
+        <update_guid_history>bd0416647f4992107686d50e738e14eb:-841846456</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">b3041664c3499210a7705fd1b40131a5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 17:45:28</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>5a635a1592574d8890603bd970d340b1</sys_id>
+        <sys_metadata>f1041664c3499210a7705fd1b40131ea</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sp_instance_f1041664c3499210a7705fd1b40131ea</sys_update_name>
+        <sys_update_version display_value="sp_instance_f1041664c3499210a7705fd1b40131ea">b9041664c3499210a7705fd1b40131ec</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 17:45:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

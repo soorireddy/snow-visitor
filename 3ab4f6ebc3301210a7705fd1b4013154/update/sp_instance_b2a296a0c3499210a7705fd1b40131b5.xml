@@ -6,54 +6,50 @@
         <css/>
         <glyph/>
         <id/>
-        <order>2</order>
+        <order>1</order>
         <roles/>
         <short_description/>
         <size>md</size>
         <sp_column display_value="1">fc05d7a7c3f01210a7705fd1b4013139</sp_column>
-        <sp_widget display_value="Relevant for you">6cc836d0dbf700500c209493db961914</sp_widget>
+        <sp_widget display_value="Visitor Actions">fe9fa5a4c3859210a7705fd1b4013191</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-28 19:52:40</sys_created_on>
-        <sys_id>b1649b67c3f01210a7705fd1b401318a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_created_on>2024-10-01 17:39:24</sys_created_on>
+        <sys_id>b2a296a0c3499210a7705fd1b40131b5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>sp_instance_b1649b67c3f01210a7705fd1b401318a</sys_update_name>
+        <sys_update_name>sp_instance_b2a296a0c3499210a7705fd1b40131b5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-28 20:02:55</sys_updated_on>
+        <sys_updated_on>2024-10-01 17:44:16</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters><![CDATA[{
-	"user_prediction_count": {
-		"value": null,
-		"displayValue": ""
+	"widget_title": {
+		"value": "Visitor Management",
+		"displayValue": "Visitor Management"
 	},
-	"recent_activity_cut_off_in_days": {
-		"value": null,
-		"displayValue": ""
+	"topic_limit": {
+		"value": "8",
+		"displayValue": "8"
 	},
-	"title": {
+	"display_size": {
+		"value": "Normal",
+		"displayValue": "Normal"
+	},
+	"border_color": {
+		"value": "Border-tertiary",
+		"displayValue": "Border-tertiary"
+	},
+	"hexcode": {
 		"value": "",
 		"displayValue": ""
 	},
-	"limit": {
-		"value": 4,
-		"displayValue": "4"
-	},
-	"category": {
-		"value": "knowledge and catalog",
-		"displayValue": "knowledge and catalog"
-	},
-	"list_type": {
-		"value": "Card List",
-		"displayValue": "Card List"
-	},
-	"card_behaviour": {
-		"value": "single",
-		"displayValue": "single"
+	"icon": {
+		"value": "true",
+		"displayValue": "true"
 	},
 	"load_config": {
 		"value": "async",
@@ -62,8 +58,12 @@
 	"show_empty_state": {
 		"value": "false",
 		"displayValue": "false"
+	},
+	"testdata": {
+		"value": "",
+		"displayValue": ""
 	}
 }]]></widget_parameters>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=b1649b67c3f01210a7705fd1b401318a"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b2a296a0c3499210a7705fd1b40131b5"/>
 </record_update>
