@@ -248,6 +248,7 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 	padding: 1em;
 	height: 100%;
 	border-radius: $border-radius-base;
+  align-items: center;
 }
 
 .popular-topic-body-container.no-icon:not(.small) .popular-topic-link {
@@ -261,7 +262,7 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 	height: 100%;
 }
 
-.popular-topic-body img {
+.popular-topic-body .icon-wrapper {
 	display: block;
 	max-width: 100%;
 	margin-left: auto;
@@ -271,7 +272,7 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 	height: $normal-img-size;
 }
 
-.popular-topic-body-container.small img {
+.popular-topic-body-container.small .icon-wrapper {
 	width: $small-img-size;
 	height: $small-img-size;
 }
@@ -330,7 +331,7 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 	max-width: none;
 }
 
-.popular-topic-body-container.no-icon img {
+.popular-topic-body-container.no-icon .icon-wrapper {
 	display: none;
 }
 
@@ -395,6 +396,13 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 
 .ie .popular-topic-title {
 	white-space: nowrap;
+}
+
+
+
+.icon-wrapper .fa {
+  font-size: 56px; /* Set icon size to 56px */
+  color: #888; /* Set the icon color */
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -564,68 +572,79 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=ecc49ba7c3053010069aec4b7d40dd89",
                 "topicId": "ecc49ba7c3053010069aec4b7d40dd89",
-                "icon": "3742085ceb6530104a299f6713522830.iix?t=small",
-                "topic": "Register A Visitor"
+                "icon": "fa fa-user-plus",
+                "topic": "Register Visitor",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=0fb45ba7c3053010069aec4b7d40dd40",
                 "topicId": "0fb45ba7c3053010069aec4b7d40dd40",
-                "icon": "a702445ceb6530104a299f6713522852.iix?t=small",
-                "topic": "Register Visit"
+                "icon": "fa fa-ticket",
+                "topic": "Register Visit",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=d22413a7c3053010069aec4b7d40ddf8",
                 "topicId": "d22413a7c3053010069aec4b7d40ddf8",
-                "icon": "7e10001ceb6530104a299f671352287d.iix?t=small",
-                "topic": "Check-in"
+                "icon": "fa fa-check-square-o",
+                "topic": "Check-in",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=1325dba7c3053010069aec4b7d40ddb4",
                 "topicId": "1325dba7c3053010069aec4b7d40ddb4",
-                "icon": "9073449ceb6530104a299f6713522884.iix?t=small",
-                "topic": "Check-out"
+                "icon": "fa fa-sign-out",
+                "topic": "Check-out",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=01a497a7c3053010069aec4b7d40dd14",
                 "topicId": "01a497a7c3053010069aec4b7d40dd14",
-                "icon": "1982c85ceb6530104a299f67135228c5.iix?t=small",
-                "topic": "Verify Visitor"
+                "icon": "fa fa-thumbs-o-up",
+                "topic": "Verify Visitor",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=2a4513e7c3053010069aec4b7d40dd6e",
                 "topicId": "2a4513e7c3053010069aec4b7d40dd6e",
-                "icon": "efc30c9ceb6530104a299f6713522829.iix?t=small",
-                "topic": "Reschedule Visit"
+                "icon": "fa fa-refresh",
+                "topic": "Reschedule Visit",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=988497a7c3053010069aec4b7d40ddea",
                 "topicId": "988497a7c3053010069aec4b7d40ddea",
-                "icon": "49d0c41ceb6530104a299f67135228d7.iix?t=small",
-                "topic": "Cancel Visit"
+                "icon": "fa fa-minus-square",
+                "topic": "Cancel Visit",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
                 "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-                "icon": "e7a3489ceb6530104a299f6713522870.iix?t=small",
-                "topic": "Assign a Host"
+                "icon": "fa fa-handshake-o",
+                "topic": "Assign a Host",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
                 "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-                "icon": "e7a3489ceb6530104a299f6713522870.iix?t=small",
-                "topic": "Print Visitor Badge"
+                "icon": "fa fa-print",
+                "topic": "Print Visitor Badge",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
                 "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-                "icon": "e7a3489ceb6530104a299f6713522870.iix?t=small",
-                "topic": "Monitor Visits"
+                "icon": "fa fa-exchange",
+                "topic": "Monitor Visits",
+							  "color":"#000"
             },
             {
                 "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
                 "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-                "icon": "e7a3489ceb6530104a299f6713522870.iix?t=small",
-                "topic": "Emergency Evacuation"
+                "icon": "fa fa-fire-extinguisher",
+                "topic": "Emergency Evacuation",
+							  "color":"#000"
             }
         ];
 	data.popularTopics = popularTopicsData;
@@ -669,14 +688,14 @@ function populateOptions(data) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-01 15:06:12</sys_created_on>
         <sys_id>fe9fa5a4c3859210a7705fd1b4013191</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>Visitor Actions</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_fe9fa5a4c3859210a7705fd1b4013191</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 17:54:46</sys_updated_on>
+        <sys_updated_on>2024-10-01 20:55:48</sys_updated_on>
         <template><![CDATA[<div class="popular-topic-panel panel panel-default panel-wrapper b"
      style="margin-top: 10px !important;" >
   <div class="popular-topic-heading panel-heading b-b">
@@ -690,22 +709,25 @@ function populateOptions(data) {
       </p>
     </div>
     <div class="popular-topic-body-container"
-			ng-class="{'small': data.isSmall, 'no-icon': !data.icon, 'fixed': isFixed }" 
-			ng-if="data.popularTopics && data.popularTopics.length > 0">
-			
-			<div class="popular-topic-body" ng-class="getClass()" ng-style="getStyle()"
-				ng-repeat="topic in data.popularTopics">
-				<a class="popular-topic-link" data-ng-attr-aria-label="{{topic.topic}}"
-					ng-href="{{topic.topicUrl}}" ng-keydown="c.keydownAction($event)">
-					<img ng-src="{{topic.icon}}" alt="" />
-					<div class="popular-topic-caption">
-						<span class = "popular-topic-title" data-toggle="tooltip" title="{{topic.topic}}">
-							{{topic.topic}}
-						</span>
-					</div>
-				</a>
-			</div>
-		</div>
+         ng-class="{'small': data.isSmall, 'no-icon': !data.icon, 'fixed': isFixed }" 
+         ng-if="data.popularTopics && data.popularTopics.length > 0">
+
+      <div class="popular-topic-body" ng-class="getClass()" ng-style="getStyle()"
+           ng-repeat="topic in data.popularTopics">
+        <a class="popular-topic-link" data-ng-attr-aria-label="{{topic.topic}}"
+           ng-href="{{topic.topicUrl}}" ng-keydown="c.keydownAction($event)">
+
+          <div class="icon-wrapper">
+            <i class="{{topic.icon}}" style="color:{{topic.color}};" aria-hidden="true"></i>
+          </div>
+          <div class="popular-topic-caption">
+            <span class = "popular-topic-title" data-toggle="tooltip" title="{{topic.topic}}">
+              {{topic.topic}}
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
