@@ -122,21 +122,35 @@
 		data.results = results;
 	}
 	
+	  var clockOptions = [
+        {zone: "America/Los_Angeles", title: "San Diego"},
+        {zone: "America/New_York", title: "New York"},
+			 {zone: "UTC", title: "UTC"},
+        {zone: "Asia/Kolkata", title: "India"},
+			 {zone: "Asia/Singapore", title: "Singapore"},
+			 {zone: "Australia/Melbourne", title: "Melbourne"},
+		];
+
+    data.clocks = [];
+    for (var i in clockOptions) {
+        data.clocks.push($sp.getWidget("widget-cool-clock", clockOptions[i]));
+    }
+	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-01 18:37:50</sys_created_on>
         <sys_id>f600aa24c3899210a7705fd1b40131c6</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>Visitor Location Search</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_f600aa24c3899210a7705fd1b40131c6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 20:57:07</sys_updated_on>
-        <template><![CDATA[<div class="form-group" style="position: relative;margin-top: 50px;margin-bottom: 80px;">
+        <sys_updated_on>2024-10-01 21:56:08</sys_updated_on>
+        <template><![CDATA[<div class="form-group" style="position: relative;margin-top: 10px;margin-bottom: 20px;">
   <label for="search-input" style="color:white;font-size:20px;">Location</label>
   <div class="input-icon-wrapper">
     <i class="fa fa-map-marker location-icon"></i> 
@@ -158,6 +172,17 @@
     </li>
   </ul>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-2" ng-repeat="myClock in c.data.clocks">
+        <sp-widget widget="myClock"></sp-widget>
+      </div>
+    </div>
+  </div>
+</div>
+
 ]]></template>
     </sp_widget>
 </record_update>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Visitor Homepage - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="visitor_home">21645b67c3f01210a7705fd1b40131e7</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 21:04:14</sys_created_on>
+        <sys_id>53818facc30d9210a7705fd1b40131c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visitor Homepage - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_container_53818facc30d9210a7705fd1b40131c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 21:04:14</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sp_container_53818facc30d9210a7705fd1b40131c2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Visitor Homepage - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="visitor_home">21645b67c3f01210a7705fd1b40131e7</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-10-01 21:04:14</sys_created_on><sys_id>53818facc30d9210a7705fd1b40131c2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Visitor Homepage - Container 2</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sp_container_53818facc30d9210a7705fd1b40131c2</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-10-01 21:04:14</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1370763321</payload_hash>
+        <record_name>Visitor Homepage - Container 2</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 21:04:14</sys_created_on>
+        <sys_id>ab818facc30d9210a7705fd1b40131c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19249e5df190000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 21:04:14</sys_updated_on>
+        <type>Container</type>
+        <update_guid>af818facfa0d9210d65f9dafad5b3ec3</update_guid>
+        <update_guid_history>af818facfa0d9210d65f9dafad5b3ec3:-1370763321</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Visitor Homepage - Container 2">e7ad47ecc34d9210a7705fd1b401313f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 21:57:13</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>1eaea4732a8843b2b0a81307d3470524</sys_id>
+        <sys_metadata>53818facc30d9210a7705fd1b40131c2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visitor Homepage - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sp_container_53818facc30d9210a7705fd1b40131c2</sys_update_name>
+        <sys_update_version display_value="sp_container_53818facc30d9210a7705fd1b40131c2">ab818facc30d9210a7705fd1b40131c4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 21:57:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
