@@ -5,7 +5,19 @@
 	var c = this;
   c.suggestions = [];
   c.getAutocompleteResults = function(query) {
-		console.log("query ==>"+ query);
+		
+		   if (c.disableServerCall) {
+      // Reset the flag and return to prevent server calls after selection
+      c.disableServerCall = false;
+      return;
+    }
+
+    // Minimum length check to avoid unnecessary server calls
+    if (!query || query.length < 2) {
+      c.suggestions = [];
+      return;
+    }
+		
 		c.server.get({
 			action: 'getLocations',
 			searchTerm: query
@@ -13,9 +25,71 @@
 			c.suggestions = response.data.results; 
 		});
 	};
+	
+	// Function to handle selecting an item from the autocomplete list
+  c.selectItem = function(item) {
+    // Set the query field to the selected item's name
+    c.query = item.name;
+    
+    // Clear suggestions after selection
+    c.suggestions = [];
+    
+    // Set the flag to true to prevent triggering another server call
+    c.disableServerCall = true;
+  };
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>/* Ensure the parent div is relative to position the absolute list properly */
+.form-group {
+  position: relative;
+}
+
+/* Style the autocomplete dropdown */
+.autocomplete-dropdown {
+  position: absolute;
+  top: 100%; /* Align directly below the input */
+  left: 0;
+  width: 100%; /* Make the dropdown the same width as the input */
+  max-height: 200px; /* Set a max height for scrolling */
+  overflow-y: auto; /* Enable scrolling if there are too many results */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ddd; /* Border for the dropdown */
+  z-index: 1000; /* Ensure the dropdown is above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for visual effect */
+  border-radius: 4px;
+}
+
+/* Style individual list items */
+.autocomplete-dropdown .list-group-item {
+  cursor: pointer;
+}
+
+.autocomplete-dropdown .list-group-item:hover {
+  background-color: #f5f5f5; /* Highlight effect on hover */
+}
+
+/* Wrapper for input field with icon */
+.input-icon-wrapper {
+  position: relative;
+}
+
+/* Style the location icon */
+.location-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust the position based on your design */
+  transform: translateY(-50%);
+  color: #000; /* Set the color of the icon */
+  font-size: 24px; /* Set icon size */
+  z-index: 1;
+}
+
+/* Style the input field */
+.location-input {
+  padding-left: 35px; /* Add padding to the left to make room for the icon */
+  box-sizing: border-box;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -31,16 +105,16 @@
         <roles/>
         <script><![CDATA[(function() {
 	if (input && input.searchTerm) {
-		var gr = new GlideRecord('sys_user'); 
-		gr.addQuery('first_name', 'STARTSWITH', input.searchTerm);
+		var gr = new GlideRecord('cmn_location'); 
+		gr.addQuery('name', 'CONTAINS', input.searchTerm);
 		gr.setLimit(5);
 		gr.query();
 		var results = [];
 		if (input.action == 'getLocations') {
 			while (gr.next()) {
 				results.push({
-					sys_id: gr.sys_id.toString(), // Send the sys_id if needed for links or further processing
-					name: gr.first_name.toString() + ' '+ gr.last_name.toString()    // Replace 'name' with the actual field you're searching on
+					sys_id: gr.sys_id.toString(),
+					name: gr.name.toString()   
 				});
 			}
 			data.results = results;
@@ -53,27 +127,33 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-01 18:37:50</sys_created_on>
         <sys_id>f600aa24c3899210a7705fd1b40131c6</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Visitor Location Search</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_f600aa24c3899210a7705fd1b40131c6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 19:04:02</sys_updated_on>
-        <template><![CDATA[<div class="form-group">
-  <label for="search-input">Search:</label>
-  <input type="text" 
-         id="search-input" 
-         class="form-control" 
-         ng-model="c.query" 
-         ng-change="c.getAutocompleteResults(c.query)" 
-         placeholder="Type to search...">
-
+        <sys_updated_on>2024-10-01 19:47:58</sys_updated_on>
+        <template><![CDATA[<div class="form-group" style="position: relative;margin-top: 50px;margin-bottom: 80px;">
+  <label for="search-input" style="color:white;font-size:20px;">Location</label>
+  <div class="input-icon-wrapper">
+    <i class="fa fa-map-marker location-icon"></i> 
+    <input type="text" 
+           id="search-input" 
+           class="form-control location-input" 
+           ng-model="c.query" 
+           ng-change="c.getAutocompleteResults(c.query)" 
+           placeholder="Type to search location" 
+           autocomplete="off">
+  </div>
   <!-- Autocomplete Results -->
-  <ul class="list-group" ng-if="c.suggestions.length > 0">
-    <li class="list-group-item" ng-repeat="item in c.suggestions">
-      {{ item.name }} <!-- Customize based on the table fields -->
+  <ul class="list-group autocomplete-dropdown" 
+      ng-if="c.suggestions.length > 0">
+    <li class="list-group-item" 
+        ng-repeat="item in c.suggestions track by $index" 
+        ng-click="c.selectItem(item)">
+      {{ item.name }} <!-- Display the field that you want to autocomplete with -->
     </li>
   </ul>
 </div>
