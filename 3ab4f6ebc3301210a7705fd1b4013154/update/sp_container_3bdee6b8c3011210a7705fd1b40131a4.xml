@@ -6,23 +6,23 @@
         <bootstrap_alt>false</bootstrap_alt>
         <class_name/>
         <container_class_name/>
-        <name>Visitor Catalog Item - Container 2</name>
-        <order>2</order>
+        <name>Alert Category Item - Container 1</name>
+        <order>1</order>
         <semantic_tag/>
-        <sp_page display_value="visitor_cat_item">1dfc1fefc3f01210a7705fd1b401318c</sp_page>
+        <sp_page display_value="alert_cat_item">6b9eea38c3011210a7705fd1b40131d7</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-28 20:30:03</sys_created_on>
-        <sys_id>51fcdf23c3341210a7705fd1b401317a</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>Visitor Catalog Item - Container 2</sys_name>
+        <sys_created_on>2024-10-02 14:21:06</sys_created_on>
+        <sys_id>3bdee6b8c3011210a7705fd1b40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Alert Category Item - Container 1</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>sp_container_51fcdf23c3341210a7705fd1b401317a</sys_update_name>
+        <sys_update_name>sp_container_3bdee6b8c3011210a7705fd1b40131a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-28 21:12:04</sys_updated_on>
+        <sys_updated_on>2024-10-02 14:21:06</sys_updated_on>
         <title/>
         <width>container</width>
     </sp_container>
