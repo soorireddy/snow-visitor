@@ -8,63 +8,56 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</cat_item>
-        <cat_variable>IO:94504dd0c38d1210a7705fd1b40131a7</cat_variable>
+        <cat_variable>IO:ef9d5780c3851210a7705fd1b4013116</cat_variable>
         <condition/>
         <description/>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Show Questionarre based on type</name>
+        <name>Visit End Date Validation </name>
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
         return;
     }
-    g_form.setDisplay('grp_name', false);
-    g_form.setDisplay('visitor_group_variable_set', false);
-    g_form.setDisplay('existing_visitor', false);
-    g_form.setDisplay('visitor', false);
-    g_form.setDisplay('health_question_variable_set', false);
-    g_form.setDisplay('host_details_variable_set', false);
-    g_form.setDisplay('upload_visitor_data', false);
-    g_form.setReadOnly('end_date', true);
-    var type = newValue;
-    if (type == 'WALK-IN') {
-        g_form.setDisplay('health_question_variable_set', true);
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
-    } else if (type == 'PRE-REGISTERED') {
-        g_form.setDisplay('host_details_variable_set', true);
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
-    } else if (type == 'GROUP') {
-        g_form.setDisplay('upload_visitor_data', true);
-        g_form.setDisplay('grp_name', true);
-        g_form.setDisplay('visitor_group_variable_set', true);
-    } else if (type == 'SINGLE') {
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
-    } else {
-        g_form.setReadOnly('end_date', false);
+    var startDate = newValue;
+    var visType = g_form.getValue('v_visit_type');
+	console.log("start date "+ startDate+" visit type  "+ visType);
+    //Time zone?
+    // script include to get end date
+    var glideAjax = new GlideAjax('GetVisitEndDate');
+    glideAjax.addParam('sysparm_name','getEndDate');
+    glideAjax.addParam('sysparm_start_date', startDate);
+    glideAjax.addParam('sysparm_vis_type', visType);
+    glideAjax.getXMLAnswer(getResponse);
+
+    function getResponse(response) {
+		//console.log("Response "+ response.responseXML.documentElement.getAttribute("answer"));
+        //var endDate = response.responseXML.documentElement.getAttribute("answer");
+		g_form.setValue('end_date',response);
+        console.log("Response :::: " + response);
     }
+	
+    //Type appropriate comment here, and begin script below
+
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-30 09:46:27</sys_created_on>
+        <sys_created_on>2024-10-03 08:55:51</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>6b1c17c0c3851210a7705fd1b4013127</sys_id>
-        <sys_mod_count>17</sys_mod_count>
-        <sys_name>Show Questionarre based on type</sys_name>
+        <sys_id>21b7eac1c3815210a7705fd1b4013127</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Visit End Date Validation </sys_name>
         <sys_overrides/>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>catalog_script_client_6b1c17c0c3851210a7705fd1b4013127</sys_update_name>
+        <sys_update_name>catalog_script_client_21b7eac1c3815210a7705fd1b4013127</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 08:55:59</sys_updated_on>
+        <sys_updated_on>2024-10-03 09:28:23</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
@@ -73,13 +66,13 @@
         <view/>
     </catalog_script_client>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>6b1c17c0c3851210a7705fd1b4013127</id>
+        <id>21b7eac1c3815210a7705fd1b4013127</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-30 09:46:27</sys_created_on>
-        <sys_id>8ddc9380c3851210a7705fd1b401314f</sys_id>
+        <sys_created_on>2024-10-03 08:55:51</sys_created_on>
+        <sys_id>c50eaa45c3055210a7705fd1b40131e5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 09:46:27</sys_updated_on>
+        <sys_updated_on>2024-10-03 08:55:51</sys_updated_on>
         <table>catalog_script_client</table>
         <use_es_latest>false</use_es_latest>
     </sys_es_latest_script>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_845458_visitorsa.GetVisitEndDate</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GetVisitEndDate</name>
+        <script><![CDATA[var GetVisitEndDate = Class.create();
+GetVisitEndDate.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getEndDate: function() {
+        var start_date = this.getParameter('sysparm_start_date');
+        var vis_type = this.getParameter('sysparm_vis_type');
+
+        gs.info("getVisitEndDate start_date: " + start_date + " and vis_type: " + vis_type);
+
+        var gdt_start_date = new GlideDateTime(start_date);
+        gs.info("Initial gdt_start_date: " + gdt_start_date.getDisplayValue());
+
+        if (vis_type == 'WALK-IN') {
+            gdt_start_date.add(7200000);;
+        } else if (vis_type == 'SINGLE') {
+            gdt_start_date.add(18000000);
+        } else if (vis_type == 'RECURRING') {
+            gdt_start_date.addDaysUTC(7);
+        }
+
+        gs.info("Final gdt_end_date: " + gdt_start_date.getDisplayValue());
+        return gdt_start_date.getDisplayValue();
+    },
+    type: 'GetVisitEndDate'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 08:57:08</sys_created_on>
+        <sys_id>f9aaaa85c3055210a7705fd1b401315f</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>GetVisitEndDate</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sys_script_include_f9aaaa85c3055210a7705fd1b401315f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 09:28:11</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f9aaaa85c3055210a7705fd1b401315f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 08:57:07</sys_created_on>
+        <sys_id>bf4eae49c3055210a7705fd1b4013183</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 08:57:07</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
