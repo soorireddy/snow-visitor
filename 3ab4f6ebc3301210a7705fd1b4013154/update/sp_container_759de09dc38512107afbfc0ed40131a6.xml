@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name>m-t</class_name>
+        <container_class_name/>
+        <name>Visitor Login - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="visitor_login">399de8d5c38512107afbfc0ed401319d</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-03 18:13:13</sys_created_on>
+        <sys_id>759de09dc38512107afbfc0ed40131a6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Visitor Login - Container 1</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_container_759de09dc38512107afbfc0ed40131a6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-03 18:14:09</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>
