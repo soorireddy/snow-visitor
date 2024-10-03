@@ -7,8 +7,8 @@
 	$scope.otpValidated = false;
 	$scope.loginError = '';
 	c.data.url_suffix = $scope.portal ? $scope.portal.url_suffix : "";
-	c.login = function (username, password, isCertLogin) {
-		login(username, password, isCertLogin);
+	c.login = function () {
+		login();
 	};
 	function login() {
 		var url = 'angular.do?sysparm_type=view_form.login';
@@ -25,7 +25,7 @@
 				'is_direct_redirect': true,
 				'sysparm_goto_url': null,
 				'mfa_redirect_url': null,
-				'cert_login': !!isCertLogin
+				'cert_login': null
 			}),
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
@@ -150,14 +150,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 18:15:59</sys_created_on>
         <sys_id>123eac9dc38512107afbfc0ed4013142</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Visitor Login</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_123eac9dc38512107afbfc0ed4013142</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 18:28:57</sys_updated_on>
+        <sys_updated_on>2024-10-03 18:39:03</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default login-panel">
   <div class="panel-heading">
     <h3 class="panel-title">Login with OTP</h3>
@@ -169,7 +169,7 @@
         <label for="otp">Enter OTP</label>
         <input type="text" id="otp" class="form-control" ng-model="otp" placeholder="Enter your OTP" />
       </div>
-      <button class="btn btn-primary btn-block" ng-click="c.login(otp,null,null)">Submit OTP</button>
+      <button class="btn btn-primary btn-block" ng-click="c.login()">Submit OTP</button>
     </div>
     <div ng-if="otpValidated" class="alert alert-success">
       <strong>Success!</strong> {{success_message}}.
