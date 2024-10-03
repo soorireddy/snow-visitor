@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>sc</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure>%item_name</dynamic_title_structure>
+        <human_readable_url_structure/>
+        <id>visitor_cat_item</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description>Display a Catalog Item</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 20:30:02</sys_created_on>
+        <sys_id>1dfc1fefc3f01210a7705fd1b401318c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>visitor_cat_item</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_page_1dfc1fefc3f01210a7705fd1b401318c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-02 14:10:10</sys_updated_on>
+        <title>Visitor Catalog Item</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=1dfc1fefc3f01210a7705fd1b401318c"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sp_page_1dfc1fefc3f01210a7705fd1b401318c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>sc</category><css/><draft>false</draft><dynamic_title_structure>%item_name</dynamic_title_structure><human_readable_url_structure/><id>visitor_cat_item</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles/><seo_script/><short_description>Display a Catalog Item</short_description><sys_class_name>sp_page</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-28 20:30:02</sys_created_on><sys_id>1dfc1fefc3f01210a7705fd1b401318c</sys_id><sys_mod_count>2</sys_mod_count><sys_name>visitor_cat_item</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sp_page_1dfc1fefc3f01210a7705fd1b401318c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-10-02 14:10:10</sys_updated_on><title>Visitor Catalog Item</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=1dfc1fefc3f01210a7705fd1b401318c"/></record_update>]]></payload>
+        <payload_hash>658656038</payload_hash>
+        <record_name>visitor_cat_item</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-02 14:10:11</sys_created_on>
+        <sys_id>775c62f4c3011210a7705fd1b40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1924d9126320000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-02 14:10:11</sys_updated_on>
+        <type>Page</type>
+        <update_guid>fb5c62f4a2011210ac9d2ddf5a6a0cd0</update_guid>
+        <update_guid_history>fb5c62f4a2011210ac9d2ddf5a6a0cd0:658656038,771dd363d3341210b0294d622f165c4d:1844286849,99fcdf23223412108f0e048282fa4368:-344153081</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="visitor_cat_item">367ce2f4c3011210a7705fd1b40131d8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-02 14:10:41</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>0c0a9802159943d5b7f10b72d23b6e11</sys_id>
+        <sys_metadata>1dfc1fefc3f01210a7705fd1b401318c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>visitor_cat_item</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sp_page_1dfc1fefc3f01210a7705fd1b401318c</sys_update_name>
+        <sys_update_version display_value="sp_page_1dfc1fefc3f01210a7705fd1b401318c">775c62f4c3011210a7705fd1b40131d1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-02 14:10:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

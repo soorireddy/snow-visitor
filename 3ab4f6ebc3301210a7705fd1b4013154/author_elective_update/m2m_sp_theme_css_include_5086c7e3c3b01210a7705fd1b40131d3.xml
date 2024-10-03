@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="DELETE">
+        <order/>
+        <sp_css_include display_value="ec-theme-catalogs-dark">bd7225a5c9711110f8772154ff55122a</sp_css_include>
+        <sp_theme display_value="Visitor Theme">6f854b63c3b01210a7705fd1b4013181</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 18:51:57</sys_created_on>
+        <sys_id>5086c7e3c3b01210a7705fd1b40131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ec-theme-catalogs-dark.Visitor Theme</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_5086c7e3c3b01210a7705fd1b40131d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 18:51:57</sys_updated_on>
+    </m2m_sp_theme_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>m2m_sp_theme_css_include_5086c7e3c3b01210a7705fd1b40131d3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include"><m2m_sp_theme_css_include action="INSERT_OR_UPDATE"><order/><sp_css_include display_value="ec-theme-catalogs-dark">bd7225a5c9711110f8772154ff55122a</sp_css_include><sp_theme display_value="Visitor Theme">6f854b63c3b01210a7705fd1b4013181</sp_theme><sys_class_name>m2m_sp_theme_css_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-28 18:51:57</sys_created_on><sys_id>5086c7e3c3b01210a7705fd1b40131d3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ec-theme-catalogs-dark.Visitor Theme</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>m2m_sp_theme_css_include_5086c7e3c3b01210a7705fd1b40131d3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-28 18:51:57</sys_updated_on></m2m_sp_theme_css_include></record_update>]]></payload>
+        <payload_hash>1211789576</payload_hash>
+        <record_name>ec-theme-catalogs-dark.Visitor Theme</record_name>
+        <reverted_from/>
+        <source>03b4f6ebc3301210a7705fd1b4013159</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 18:51:57</sys_created_on>
+        <sys_id>9086c7e3c3b01210a7705fd1b40131d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19239f9ae660000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 18:51:57</sys_updated_on>
+        <type>Stylesheets</type>
+        <update_guid>9486c7e326b01210681ff7d491518cd4</update_guid>
+        <update_guid_history>9486c7e326b01210681ff7d491518cd4:1211789576</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ec-theme-catalogs-dark.Visitor Theme">36270fefc3701210a7705fd1b401316c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 18:54:51</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_theme_css_include">m2m_sp_theme_css_include</sys_db_object>
+        <sys_id>4075db6f95d14b6c9cda3a0fab063890</sys_id>
+        <sys_metadata>5086c7e3c3b01210a7705fd1b40131d3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ec-theme-catalogs-dark.Visitor Theme</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>m2m_sp_theme_css_include_5086c7e3c3b01210a7705fd1b40131d3</sys_update_name>
+        <sys_update_version display_value="m2m_sp_theme_css_include_5086c7e3c3b01210a7705fd1b40131d3">9086c7e3c3b01210a7705fd1b40131d5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 18:54:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

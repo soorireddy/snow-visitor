@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function controller($scope) {
+	var c = this;
+	var CONST = {
+		'BORDER_COLOR': 'border-color',
+		'TOPIC_SELECTOR': '.popular-topic-body-container',
+		'FN_RESIZE': 'resizePopularTopicWidget',
+		'CONTAINER': '.container',
+		'SMALL': 'small',
+		'NO_ICON': 'no-icon',
+		'POPULAR_TOPIC_BODY': '.popular-topic-body',
+		'IE_PREFIX': 'Trident/',
+		'IE': 'ie',
+		'MARGIN': 'mr-0',
+		'H5_SELECTOR': '.popular-topic-caption .popular-topic-title',
+		'FONT_SIZE': 'font-size',
+		'FIXED_COUNT': 4,
+		'LIMIT': 12
+	};
+	$scope.isLoading = false;
+	var data = c.data;
+	$scope.isFixed = false;
+	var isIE = window.navigator.userAgent.indexOf(CONST.IE_PREFIX) !== -1;
+	$scope.getClass = function () {
+		var isHex = data && data.isHex || false;
+		return !isHex ? getThemeClass(data.borderColor) : "";
+	};
+
+	$scope.getStyle = function () {
+		var style = {};
+		style[CONST.BORDER_COLOR] = data && data.hexcode;
+		var isHex = data && data.isHex || false;
+		return isHex ? style : {};
+	};
+	var registered = false;
+	var resizeEvents = $._data(window, "events").resize;
+	if (resizeEvents) {
+		resizeEvents.forEach(function (callback) {
+			var handler = callback.handler;
+			var name = handler.name;
+			if (name === CONST.FN_RESIZE) {
+				registered = true;
+			}
+		});
+	}
+
+	if (!registered) {
+		$(window).resize(resizePopularTopicWidget);
+	}
+	$scope.$evalAsync(resizePopularTopicWidget);
+	$scope.$evalAsync(topicTooltip);
+	function getThemeClass(background) {
+		var THEME = {
+			'border-primary': 'primary-color',
+			'border-secondary': 'secondary-color',
+			'border-tertiary': 'tertiary-color'
+		};
+		var result = 'tertiary-color';
+		if (background in THEME)
+			result = THEME[background];
+
+		return result;
+	}
+	function resizePopularTopicWidget() {
+		var topicCont = $(CONST.TOPIC_SELECTOR);
+		if (isIE) {
+			resizeWidgetIE(topicCont);
+		}
+		topicTooltip();
+	}
+	function resizeWidgetIE(topicCont) {
+		var MIN_TOPIC_WIDTH = 150;
+		var MAX_TOPIC_WIDTH = 250;
+		var PADDING = 16;
+		var MIN_BREAK_POINT = 330;
+		var MOBILE_WIDTH = 400;
+		$(CONST.TOPIC_SELECTOR).addClass(CONST.IE);
+		topicCont.each(function (i, container) {
+			var availablePanelWidth = getPanelWidth(container);
+			var isSmall = $(container).hasClass(CONST.SMALL);
+			var noIcon = $(container).hasClass(CONST.NO_ICON);
+			var limit = CONST.LIMIT;
+			var numberOfTopic = Math.min(Math.round(availablePanelWidth / MIN_TOPIC_WIDTH), limit);
+			numberOfTopic = calcTopicCount(numberOfTopic, MIN_TOPIC_WIDTH, availablePanelWidth, PADDING, true);
+			isSmall = true;
+			if (availablePanelWidth <= MOBILE_WIDTH) {
+				numberOfTopic = 2;
+				if ((isSmall && !noIcon) || (availablePanelWidth <= MIN_BREAK_POINT)) {
+					numberOfTopic = 1;
+				}
+			}
+			var topicWidth = Math.floor((availablePanelWidth - ((numberOfTopic) * PADDING) - 1) / numberOfTopic);
+			topicWidth = (numberOfTopic === 1 && isSmall && !noIcon) ? availablePanelWidth : Math.min(topicWidth, MAX_TOPIC_WIDTH);
+			var topicList = $(CONST.POPULAR_TOPIC_BODY, container);
+			topicList.each(function (j, topic) {
+				$(topic).css('width', topicWidth);
+				if (isSmall && !noIcon) {
+					$(topic).css('max-width', 'inherit');
+				}
+			});
+		});
+	}
+	function calcTopicCount(topicCount, minTopicWidth, maxWidth, padWidth, isIE) {
+		var calcWidth = calculateWidth(minTopicWidth, padWidth, topicCount, isIE);
+		while ((topicCount > 0) && (calcWidth > maxWidth)) {
+			topicCount--;
+			calcWidth = calculateWidth(minTopicWidth, padWidth, topicCount, isIE);
+		}
+		return topicCount;
+	}
+	function calculateWidth(minTopicWidth, padWidth, topicCount, isIE) {
+		var calcWidth = 0;
+		var gridGapCount = topicCount - 1;
+		if (isIE) {
+			gridGapCount = topicCount;
+		}
+		calcWidth = (minTopicWidth * topicCount) + (gridGapCount * padWidth);
+		return calcWidth;
+	}
+	function getPanelWidth(topicPanel) {
+		var panelWidth = $(topicPanel).width();
+		var parentWidth = $(topicPanel).parents(CONST.CONTAINER).width() || panelWidth;
+		return Math.min(parentWidth, panelWidth);
+	}
+	function checkEllipsis(tooltip) {
+		if (isIE) {
+			return tooltip.scrollWidth > $(tooltip).parent().width();
+		}
+		var fontSize = parseFloat($(tooltip).css(CONST.FONT_SIZE));
+		return (($(tooltip).height() + fontSize / 2) < tooltip.scrollHeight);
+	}
+	function topicTooltip() {
+		var topics = $(CONST.H5_SELECTOR);
+		topics.tooltip('enable');
+		topics.each(function (i, tooltip) {
+			if (!checkEllipsis(tooltip)) {
+				$(tooltip).tooltip('disable');
+			}
+		});
+	}
+	c.asyncGet = function() {
+		$scope.isLoading = true;
+		c.data.action = "loadData";
+		c.server.update().then(function(response) {
+			fetchPopularTopicsData();
+		});
+	}
+	var fetchPopularTopicsData = function() {
+		$scope.isLoading = false;
+		$scope.isFixed = (data.popularTopics && (data.popularTopics.length < CONST.FIXED_COUNT)) || false;
+		setTimeout(resizePopularTopicWidget);
+		setTimeout(topicTooltip);
+	};
+
+	var load_config = c.data.load_config;
+	if (load_config === "async")
+		setTimeout(c.asyncGet);
+	else
+		fetchPopularTopicsData();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/*** Variables declaration **/
+
+$border-radius: 6px;
+$shadow: 0px 2px 10px rgba(23, 40, 52, 0.08);
+$normal-img-size: 56px;
+$small-img-size: 32px;
+$rm: 10px;
+$text-primary: #181a1f !default;
+$color-sp-separator: #eaeaea !default;
+$headings-font-weight: 600 !default;
+$border-primary: #8790a1 !default;
+$border-secondary: #acb2be !default;
+$border-tertiary: #dadde2 !default;
+$sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
+
+.popular-topic-panel * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	p {
+		margin: 0 0 1.1rem;
+	}
+}
+
+.popular-topic-panel {
+	background-color: $color-lightest;
+	border-radius: $border-radius-large;
+	box-shadow: $shadow;
+	margin-bottom: $rm * 1.6;
+	color: $text-primary;
+	border-color: transparent;
+}
+
+.popular-topic-panel.small {
+	font-size: $rm * 1.6;
+}
+
+.popular-topic-panel &gt; .popular-topic-heading {
+	word-wrap: break-word;
+	padding: $rm * 2.4;
+	color: $text-primary;
+	border-top-right-radius: $border-radius;
+	border-top-left-radius: $border-radius;
+	border-bottom: 1px solid $color-sp-separator;
+	background: none;
+}
+
+.popular-topic-body-container {
+	padding: 1.6 * $rm 2.4 * $rm;
+	display: grid;
+	grid-auto-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-gap: 1.6 * $rm;
+}
+.popular-topic-empty-state {
+	height: 15 * $rm;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2.4rem;
+	text-align: center;
+	.popular-topic-empty-text{
+		font-size: $font-size-base;
+		color:$text-secondary;
+	}
+}
+.popular-topic-body {
+	margin-bottom: 0;
+	background-color: $color-lightest;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: $border-radius-base;
+}
+
+.popular-topic-body:hover {
+	box-shadow: $sp-panel-box-shadow;
+}
+
+.popular-topic-body &gt; .popular-topic-link {
+	text-decoration: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: $text-primary;
+	display: block;
+	padding: 1em;
+	height: 100%;
+	border-radius: $border-radius-base;
+  align-items: center;
+}
+
+.popular-topic-body-container.no-icon:not(.small) .popular-topic-link {
+	padding-top: $rm * 5.2;
+	padding-bottom: $rm * 5.2;
+}
+
+.popular-topic-body-container.small .popular-topic-link {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.popular-topic-body .icon-wrapper {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	width: $normal-img-size;
+	height: $normal-img-size;
+}
+
+.popular-topic-body-container.small .icon-wrapper {
+	width: $small-img-size;
+	height: $small-img-size;
+}
+
+.popular-topic-body .popular-topic-caption {
+	font-size: 1em;
+	text-align: center;
+}
+
+.popular-topic-caption .popular-topic-title {
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: $text-primary;
+	font-weight: $headings-font-weight;
+}
+
+.popular-topic-caption .tooltip-inner {
+	padding: 0.3rem 0.8rem;
+}
+
+.popular-topic-caption .tooltip-arrow {
+	bottom: -5px;
+}
+
+.popular-topic-body-container:not(.small) .popular-topic-caption {
+	padding-top: $rm * 1.6;
+	margin-bottom: $rm * 0.5;
+	.popular-topic-title {
+		font-size: $rm * 1.6;
+	}
+}
+
+.popular-topic-body-container.small .popular-topic-caption {
+	width: calc(100% - $small-img-size);
+	text-align: left;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 1em;
+	margin-left: 0;
+}
+
+.popular-topic-body-container.no-icon .popular-topic-caption {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+	max-width: none;
+}
+
+.popular-topic-body-container.no-icon .icon-wrapper {
+	display: none;
+}
+
+.primary-color {
+	border-color: $border-primary;
+}
+
+.secondary-color {
+	border-color: $border-secondary;
+}
+
+.tertiary-color {
+	border-color: $border-tertiary;
+}
+
+@media screen and (min-width: 330px) {
+	.popular-topic-body-container {
+		grid-template-columns: repeat(2, minmax($rm * 13, 1fr));
+		grid-gap: $rm * 1.6 $rm;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.popular-topic-body-container.small:not(.no-icon) {
+		grid-template-columns: 1fr;
+	}
+	.popular-topic-body-container {
+		padding: 1.6 * $rm;
+	}
+}
+
+@media screen and (min-width: 430px) {
+	.popular-topic-body {
+		max-width: $rm * 25;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.popular-topic-body-container:not(.fixed) {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		grid-gap: 1.6 * $rm;
+	}
+	.popular-topic-body-container.fixed {
+		grid-template-columns: repeat(auto-fill, minmax($rm * 15, 1fr));
+		grid-gap: 1.6 * $rm;
+	}
+}
+
+.ie.popular-topic-body-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 0;
+	padding-right: 0.8 * $rm;
+}
+
+.ie .popular-topic-body {
+	margin-right: $rm * 1.6;
+	margin-bottom: $rm * 1.6;
+	min-width: $rm * 15;
+	max-width: $rm * 25;
+}
+
+.ie .popular-topic-title {
+	white-space: nowrap;
+}
+
+
+
+.icon-wrapper .fa {
+  font-size: 56px; /* Set icon size to 56px */
+  color: #888; /* Set the icon color */
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data>{
+    "options": {
+        "widget_title": "Visitor Managment",
+        "topic_limit": "8",
+        "display_size": "Normal",
+        "border_color": "Border-tertiary",
+        "hexcode": "#FFFFFF",
+        "icon": "true",
+        "load_config": "async",
+        "show_empty_state": "false"
+    }
+}</demo_data>
+        <description>visitor_actions</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>visitor_actions</id>
+        <internal>false</internal>
+        <link/>
+        <name>Visitor Actions</name>
+        <option_schema>[&#13;
+    {&#13;
+        "hint": "Title name of the widget",&#13;
+        "name": "widget_title",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "Popular topics",&#13;
+        "label": "Title",&#13;
+        "type": "string"&#13;
+    },&#13;
+    {&#13;
+        "hint": "Number of topics to be shown",&#13;
+        "name": "topic_limit",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "8",&#13;
+        "label": "Number of topics",&#13;
+        "type": "choice",&#13;
+        "choices": [&#13;
+            {&#13;
+                "label": "4",&#13;
+                "value": "4"&#13;
+            },&#13;
+            {&#13;
+                "label": "6",&#13;
+                "value": "6"&#13;
+            },&#13;
+            {&#13;
+                "label": "8",&#13;
+                "value": "8"&#13;
+            },&#13;
+            {&#13;
+                "label": "12",&#13;
+                "value": "12"&#13;
+            }&#13;
+        ]&#13;
+    },&#13;
+    {&#13;
+        "hint": "Display size (Normal / Small)",&#13;
+        "name": "display_size",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "Normal",&#13;
+        "label": "Display size",&#13;
+        "type": "choice",&#13;
+        "choices": [&#13;
+            {&#13;
+                "label": "Normal",&#13;
+                "value": "Normal"&#13;
+            },&#13;
+            {&#13;
+                "label": "Small",&#13;
+                "value": "Small"&#13;
+            }&#13;
+        ]&#13;
+    },&#13;
+    {&#13;
+        "hint": "Border color of popular topic",&#13;
+        "name": "border_color",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "Border-tertiary",&#13;
+        "label": "Border color",&#13;
+        "type": "choice",&#13;
+        "choices": [&#13;
+            {&#13;
+                "label": "Border-primary",&#13;
+                "value": "Border-primary"&#13;
+            },&#13;
+            {&#13;
+                "label": "Border-secondary",&#13;
+                "value": "Border-secondary"&#13;
+            },&#13;
+            {&#13;
+                "label": "Border-tertiary",&#13;
+                "value": "Border-tertiary"&#13;
+            },&#13;
+            {&#13;
+                "label": "Hexcode",&#13;
+                "value": "Hexcode"&#13;
+            }&#13;
+        ]&#13;
+    },&#13;
+    {&#13;
+        "hint": "Hex code of border color",&#13;
+        "name": "hexcode",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "#FFFFFF",&#13;
+        "label": "Hexcode",&#13;
+        "type": "string"&#13;
+    },&#13;
+    {&#13;
+        "hint": "Icon to be shown for popular topic",&#13;
+        "name": "icon",&#13;
+        "section": "Presentation",&#13;
+        "default_value": "true",&#13;
+        "label": "Show topic icon",&#13;
+        "type": "boolean"&#13;
+    },&#13;
+    {&#13;
+        "name": "load_config",&#13;
+        "section": "other",&#13;
+        "default_value": "async",&#13;
+        "label": "Load configuration",&#13;
+        "type": "choice",&#13;
+        "choices": [&#13;
+            {&#13;
+                "label": "Synchronous",&#13;
+                "value": "sync"&#13;
+            },&#13;
+            {&#13;
+                "label": "Asynchronous",&#13;
+                "value": "async"&#13;
+            }&#13;
+        ]&#13;
+    },&#13;
+    {&#13;
+        "hint": "Shows empty state if the widget content is empty.",&#13;
+        "name": "show_empty_state",&#13;
+        "section": "other",&#13;
+        "default_value": "false",&#13;
+        "label": "Show empty state",&#13;
+        "type": "boolean"&#13;
+    },&#13;
+    {&#13;
+        "type": "array",&#13;
+        "label": "Test Data",&#13;
+        "name": "testdata",&#13;
+        "description": "Enter a JSON array of values",&#13;
+        "default": [&#13;
+            {&#13;
+                "topicUrl": "?id=emp_taxonomy_topic&amp;topic_id=ecc49ba7c3053010069aec4b7d40dd89",&#13;
+                "topicId": "ecc49ba7c3053010069aec4b7d40dd89",&#13;
+                "icon": "3742085ceb6530104a299f6713522830.iix?t=small",&#13;
+                "topic": "Register Visitor"&#13;
+            }&#13;
+        ]&#13;
+      }&#13;
+]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function () {
+	data.options = options;
+	data.popularTopics =[];
+	var session = gs.getSession();
+	var popularTopicsDataKey = 'alert_vm_list_data';
+	var popularTopicsData = [
+            {
+                "topicUrl": "?id=sc_cat_item&sys_id=71f7ba8cc3811210a7705fd1b4013115",
+                "topicId": "ecc49ba7c3053010069aec4b7d40dd89",
+                "icon": "fa fa-user-plus",
+                "topic": "Register Visitor",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=alert_cat_item&sys_id=71f7ba8cc3811210a7705fd1b4013115",
+                "topicId": "0fb45ba7c3053010069aec4b7d40dd40",
+                "icon": "fa fa-ticket",
+                "topic": "Register Visit",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=d22413a7c3053010069aec4b7d40ddf8",
+                "topicId": "d22413a7c3053010069aec4b7d40ddf8",
+                "icon": "fa fa-check-square-o",
+                "topic": "Check-in",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=1325dba7c3053010069aec4b7d40ddb4",
+                "topicId": "1325dba7c3053010069aec4b7d40ddb4",
+                "icon": "fa fa-sign-out",
+                "topic": "Check-out",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=01a497a7c3053010069aec4b7d40dd14",
+                "topicId": "01a497a7c3053010069aec4b7d40dd14",
+                "icon": "fa fa-thumbs-o-up",
+                "topic": "Verify Visitor",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=2a4513e7c3053010069aec4b7d40dd6e",
+                "topicId": "2a4513e7c3053010069aec4b7d40dd6e",
+                "icon": "fa fa-refresh",
+                "topic": "Reschedule Visit",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=988497a7c3053010069aec4b7d40ddea",
+                "topicId": "988497a7c3053010069aec4b7d40ddea",
+                "icon": "fa fa-minus-square",
+                "topic": "Cancel Visit",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
+                "topicId": "5c4513e7c3053010069aec4b7d40dd01",
+                "icon": "fa fa-handshake-o",
+                "topic": "Assign a Host",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
+                "topicId": "5c4513e7c3053010069aec4b7d40dd01",
+                "icon": "fa fa-print",
+                "topic": "Print Visitor Badge",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
+                "topicId": "5c4513e7c3053010069aec4b7d40dd01",
+                "icon": "fa fa-exchange",
+                "topic": "Monitor Visits",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
+                "topicId": "5c4513e7c3053010069aec4b7d40dd01",
+                "icon": "fa fa-fire-extinguisher",
+                "topic": "Emergency Evacuation",
+							  "color":"#000"
+            }
+        ];
+	data.popularTopics = popularTopicsData;
+	session.putClientData(popularTopicsDataKey, JSON.stringify(data.popularTopics));
+	
+	data.options = options;
+	populateOptions(data);
+})();
+
+
+function populateOptions(data) {
+	var CONST = {
+		'HEX': 'hexcode',
+		'NORMAL': 'normal',
+		'SMALL': 'small',
+		'TRUE': 'true',
+		'FALSE': 'false',
+		'DEFAULT_COLOR': '#FFFFFF',
+		'DEFAULT_BORDER_OPTION': 'border-tertiary',
+		'REGEX': /^#([0-9A-F]{3}){1,2}$/i
+	};
+	var option = data.options;
+	data.isNormal = (option.display_size.toLowerCase() === CONST.NORMAL);
+	data.isSmall = (option.display_size.toLowerCase() === CONST.SMALL);
+	data.borderColor = option.border_color.toLowerCase();
+	data.icon = option.icon.toLowerCase() === CONST.TRUE;
+	data.isHex = (data.borderColor === CONST.HEX);
+	data.hexcode = option.hexcode;
+	var title = [option.widget_title];
+	data.widgetTitle = gs.getMessage(title);
+
+	if (data.isHex) {
+		if (!CONST.REGEX.test(option.hexcode)) {
+			data.borderColor = CONST.DEFAULT_BORDER_OPTION;
+			data.isHex = false;
+		}
+	}
+}]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 15:06:12</sys_created_on>
+        <sys_id>fe9fa5a4c3859210a7705fd1b4013191</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>Visitor Actions</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_fe9fa5a4c3859210a7705fd1b4013191</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-02 17:20:19</sys_updated_on>
+        <template><![CDATA[<div class="popular-topic-panel panel panel-default panel-wrapper b"
+     style="margin-top: 10px !important;" >
+  <div class="popular-topic-heading panel-heading b-b">
+    <h3 class="panel-title">{{data.widgetTitle}}</h3>
+  </div>
+
+  <div class="popular-topic-panel-body">
+    <div class="popular-topic-empty-state" ng-if="(!data.popularTopics || data.popularTopics.length === 0)">
+      <p class="popular-topic-empty-text">
+        ${We don't have any actions configured in this location to show you.}
+      </p>
+    </div>
+    <div class="popular-topic-body-container"
+         ng-class="{'small': data.isSmall, 'no-icon': !data.icon, 'fixed': isFixed }" 
+         ng-if="data.popularTopics && data.popularTopics.length > 0">
+
+      <div class="popular-topic-body" ng-class="getClass()" ng-style="getStyle()"
+           ng-repeat="topic in data.popularTopics">
+        <a class="popular-topic-link" data-ng-attr-aria-label="{{topic.topic}}"
+           ng-href="{{topic.topicUrl}}" ng-keydown="c.keydownAction($event)">
+
+          <div class="icon-wrapper">
+            <i class="{{topic.icon}}" style="color:{{topic.color}};" aria-hidden="true"></i>
+          </div>
+          <div class="popular-topic-caption">
+            <span class = "popular-topic-title" data-toggle="tooltip" title="{{topic.topic}}">
+              {{topic.topic}}
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fe9fa5a4c3859210a7705fd1b4013191</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-01 15:07:11</sys_created_on>
+        <sys_id>51dfada4c3859210a7705fd1b401312f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-01 15:07:11</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

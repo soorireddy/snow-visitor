@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Visitor Catalog Item - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="visitor_cat_item">1dfc1fefc3f01210a7705fd1b401318c</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 20:30:03</sys_created_on>
+        <sys_id>51fcdf23c3341210a7705fd1b401317a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Visitor Catalog Item - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_container_51fcdf23c3341210a7705fd1b401317a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 21:12:04</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sp_container_51fcdf23c3341210a7705fd1b401317a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Visitor Catalog Item - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="visitor_cat_item">1dfc1fefc3f01210a7705fd1b401318c</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-28 20:30:03</sys_created_on><sys_id>51fcdf23c3341210a7705fd1b401317a</sys_id><sys_mod_count>6</sys_mod_count><sys_name>Visitor Catalog Item - Container 2</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sp_container_51fcdf23c3341210a7705fd1b401317a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-28 21:12:04</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>387611960</payload_hash>
+        <record_name>Visitor Catalog Item - Container 2</record_name>
+        <reverted_from/>
+        <source>03b4f6ebc3301210a7705fd1b4013159</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 21:12:04</sys_created_on>
+        <sys_id>b8966f6fc3341210a7705fd1b4013190</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1923a79f7ac0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 21:12:04</sys_updated_on>
+        <type>Container</type>
+        <update_guid>b0966f6fa3341210566d166c9e420890</update_guid>
+        <update_guid_history>b0966f6fa3341210566d166c9e420890:387611960,cc75232f93341210020d2a86051179f4:-1092169353,1165e3eb3c3412109f6f0324baf85ef1:387611960,006e9fa3de3412101c2f762b6237ee5b:-1776104379,d84edba3c83412100ea5058f8628bad7:1867393273,bb1d5fef62f01210103801d654415b37:-426097260,15fcdf23013412103faa48d828fe127b:84219452</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Visitor Catalog Item - Container 2">cf7ca278c3011210a7705fd1b401312c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-02 14:10:41</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>5765fbad84d34fd6b4b96855d9786e11</sys_id>
+        <sys_metadata>51fcdf23c3341210a7705fd1b401317a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visitor Catalog Item - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sp_container_51fcdf23c3341210a7705fd1b401317a</sys_update_name>
+        <sys_update_version display_value="sp_container_51fcdf23c3341210a7705fd1b401317a">b8966f6fc3341210a7705fd1b4013190</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-02 14:10:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

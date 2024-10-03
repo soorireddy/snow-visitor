@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="DELETE">
+        <catalog_item/>
+        <catalog_variable>IO:61b05fccc3051210a7705fd1b40131c2</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:27:19</sys_created_on>
+        <sys_id>2d68174cc3451210a7705fd1b4013112</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>any_recent_contact_with_sick_person</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_2d68174cc3451210a7705fd1b4013112</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:27:19</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Hide variable set">f0f7d70cc3451210a7705fd1b40131c7</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>any_recent_contact_with_sick_person</variable>
+        <variable_set display_value="Health Questionarre">b8405fccc3051210a7705fd1b40131bd</variable_set>
+        <visible>false</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=2d68174cc3451210a7705fd1b4013112"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>catalog_ui_policy_action_2d68174cc3451210a7705fd1b4013112</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action"><catalog_ui_policy_action action="INSERT_OR_UPDATE"><catalog_item/><catalog_variable>IO:61b05fccc3051210a7705fd1b40131c2</catalog_variable><cleared>false</cleared><disabled>ignore</disabled><field/><field_message/><field_message_type>none</field_message_type><mandatory>ignore</mandatory><order>100</order><sys_class_name>catalog_ui_policy_action</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-30 09:27:19</sys_created_on><sys_id>2d68174cc3451210a7705fd1b4013112</sys_id><sys_mod_count>0</sys_mod_count><sys_name>any_recent_contact_with_sick_person</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>catalog_ui_policy_action_2d68174cc3451210a7705fd1b4013112</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-30 09:27:19</sys_updated_on><table/><ui_policy display_value="Hide variable set">f0f7d70cc3451210a7705fd1b40131c7</ui_policy><value/><value_action>ignore</value_action><variable>any_recent_contact_with_sick_person</variable><variable_set display_value="Health Questionarre">b8405fccc3051210a7705fd1b40131bd</variable_set><visible>false</visible></catalog_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=2d68174cc3451210a7705fd1b4013112"/></record_update>]]></payload>
+        <payload_hash>-1415935240</payload_hash>
+        <record_name>any_recent_contact_with_sick_person</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:27:19</sys_created_on>
+        <sys_id>c978574cc3451210a7705fd1b40131e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1924241781b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:27:19</sys_updated_on>
+        <type>Catalog UI Policy Action</type>
+        <update_guid>cd78574ca34512104164d3f56297f5df</update_guid>
+        <update_guid_history>cd78574ca34512104164d3f56297f5df:-1415935240</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="any_recent_contact_with_sick_person">616a1b00c3851210a7705fd1b4013108</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:35:50</sys_created_on>
+        <sys_db_object display_value="" name="catalog_ui_policy_action">catalog_ui_policy_action</sys_db_object>
+        <sys_id>0308661fc64045d3825a33f89a354431</sys_id>
+        <sys_metadata>2d68174cc3451210a7705fd1b4013112</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>any_recent_contact_with_sick_person</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>catalog_ui_policy_action_2d68174cc3451210a7705fd1b4013112</sys_update_name>
+        <sys_update_version display_value="catalog_ui_policy_action_2d68174cc3451210a7705fd1b4013112">c978574cc3451210a7705fd1b40131e0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:35:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</sc_cat_item>
+        <sc_category display_value="Services">d67c446ec0a80165000335aa37eafbc1</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:36:45</sys_created_on>
+        <sys_id>409a5f00c3851210a7705fd1b4013154</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Create Visit</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sc_cat_item_category_409a5f00c3851210a7705fd1b4013154</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:36:45</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sc_cat_item_category_409a5f00c3851210a7705fd1b4013154</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</sc_cat_item><sc_category display_value="Services">d67c446ec0a80165000335aa37eafbc1</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-30 09:36:45</sys_created_on><sys_id>409a5f00c3851210a7705fd1b4013154</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Services.Create Visit</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sc_cat_item_category_409a5f00c3851210a7705fd1b4013154</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-30 09:36:45</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>306880861</payload_hash>
+        <record_name>Services.Create Visit</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:36:45</sys_created_on>
+        <sys_id>c39adf00c3851210a7705fd1b401314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192424a1a6e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:36:45</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>c79adf002e851210c042fdee6100ef4b</update_guid>
+        <update_guid_history>c79adf002e851210c042fdee6100ef4b:306880861</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Services.Create Visit">ad0b1340c3851210a7705fd1b4013179</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 09:38:33</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>1a45ca1887e64459afde60dda29fca91</sys_id>
+        <sys_metadata>409a5f00c3851210a7705fd1b4013154</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Services.Create Visit</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_409a5f00c3851210a7705fd1b4013154</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_409a5f00c3851210a7705fd1b4013154">c39adf00c3851210a7705fd1b401314c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:38:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

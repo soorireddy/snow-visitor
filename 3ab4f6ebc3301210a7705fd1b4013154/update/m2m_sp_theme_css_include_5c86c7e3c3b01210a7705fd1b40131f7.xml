@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order/>
+        <sp_css_include display_value="ec-theme-knowledge">150937ef1b783c5047582171604bcba5</sp_css_include>
+        <sp_theme display_value="Visitor Theme">6f854b63c3b01210a7705fd1b4013181</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 18:51:57</sys_created_on>
+        <sys_id>5c86c7e3c3b01210a7705fd1b40131f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ec-theme-knowledge.Visitor Theme</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_5c86c7e3c3b01210a7705fd1b40131f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 18:51:57</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>
