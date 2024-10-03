@@ -7,11 +7,39 @@
 
 	$scope.isCaptured = false;
 	$scope.photoData = '';
+	$scope.availableCameras = [];  // List of available cameras
+	$scope.selectedCameraId = null; // Currently selected camera ID
 	let videoStream = null; // Variable to store the video stream
 
-	// Function to start the camera
-	$scope.startCamera = function() {
-		navigator.mediaDevices.getUserMedia({ video: true })
+	// Function to list all available cameras
+	$scope.getAvailableCameras = function() {
+		navigator.mediaDevices.enumerateDevices()
+			.then(function(devices) {
+			$scope.availableCameras = devices.filter(function(device) {
+				return device.kind === 'videoinput'; // Filter only video input devices (cameras)
+			});
+
+			// If at least one camera is found, set the first one as the default selected camera
+			if ($scope.availableCameras.length > 0) {
+				$scope.selectedCameraId = $scope.availableCameras[0].deviceId;
+				$scope.startCamera($scope.selectedCameraId); // Start the default camera
+			}
+			$scope.$apply(); // Update the scope after async operation
+		})
+			.catch(function(err) {
+			console.error("Error listing cameras: ", err);
+		});
+	};
+
+	// Function to start the camera with the selected device ID
+	$scope.startCamera = function(cameraId) {
+		// If there is an existing video stream, stop it first
+		$scope.stopCamera();
+
+		// Get the video stream from the selected camera
+		navigator.mediaDevices.getUserMedia({ 
+			video: { deviceId: cameraId ? { exact: cameraId } : undefined }
+		})
 			.then(function(stream) {
 			videoStream = stream; // Store the stream to stop it later
 			var video = document.getElementById('video');
@@ -56,11 +84,11 @@
 	$scope.retakePhoto = function() {
 		$scope.isCaptured = false;
 		$scope.photoData = '';
-		$scope.startCamera(); // Start the camera again when retaking the photo
+		$scope.startCamera($scope.selectedCameraId); // Start the camera again using the selected camera
 	};
 
 	// Start the camera for the first time when the widget loads
-	$scope.startCamera();
+	$scope.getAvailableCameras();
 
 	// Make sure to stop the camera stream if the user navigates away
 	$scope.$on('$destroy', function() {
@@ -94,16 +122,23 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 19:15:11</sys_created_on>
         <sys_id>141b3cddc3c512107afbfc0ed4013108</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Visitor Camera Capture</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_141b3cddc3c512107afbfc0ed4013108</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 19:24:27</sys_updated_on>
+        <sys_updated_on>2024-10-03 19:31:01</sys_updated_on>
         <template><![CDATA[<div class="camera-capture-widget">
     <h3>Capture Image</h3>
+
+    <!-- Camera selection dropdown -->
+    <div>
+        <label for="camera-select">Select Camera:</label>
+        <select id="camera-select" class="form-control" ng-model="selectedCameraId" ng-options="camera.deviceId as camera.label for camera in availableCameras" ng-change="startCamera(selectedCameraId)">
+        </select>
+    </div>
 
     <div ng-if="!isCaptured">
         <video id="video" width="320" height="240" autoplay></video>
@@ -118,7 +153,8 @@
     
     <!-- Hidden input to store the base64 data -->
     <input type="hidden" id="imageData" value="{{photoData}}" />
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>141b3cddc3c512107afbfc0ed4013108</id>
