@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+	var c = this;
+	c.qrCode = '';
+
+	// Initialize the QuaggaJS barcode scanner
+	Quagga.init({
+		inputStream: {
+			name: "Live",
+			type: "LiveStream",
+			target: document.querySelector('#qr-scanner-container'),
+			constraints: {
+				width: 640,
+				height: 480,
+				facingMode: "environment" // Use the back camera
+			}
+		},
+		decoder: {
+			readers: [] // Disable all readers, since we'll use jsQR for QR code scanning
+		}
+	}, function (err) {
+		if (err) {
+			console.error(err);
+			return;
+		}
+		console.log("QR code scanner initialized successfully.");
+		Quagga.start();
+	});
+
+	Quagga.onProcessed(function (result) {
+		if (result && result.boxes) {
+			// Grab the live video frame and extract the image data
+			var video = document.querySelector('video');
+			if (video) {
+				var canvas = document.createElement('canvas');
+				var context = canvas.getContext('2d');
+				canvas.width = video.videoWidth;
+				canvas.height = video.videoHeight;
+				context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+				var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+				var qrCode = jsQR(imageData.data, canvas.width, canvas.height);
+
+				if (qrCode) {
+					$scope.$apply(function () {
+						c.qrCode = qrCode.data;
+					});
+					console.log("QR Code detected: " + qrCode.data);
+				}
+			}
+		}
+	});
+	$scope.$on('$destroy', function () {
+		Quagga.stop();
+	});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>QR Code Reader</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>qr-code-reader</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>QR Code Reader</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-04 06:13:49</sys_created_on>
+        <sys_id>dc529799c34112107afbfc0ed401313f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>QR Code Reader</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_dc529799c34112107afbfc0ed401313f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-04 06:20:50</sys_updated_on>
+        <template><![CDATA[<div class="qr-code-scanner">
+  <h3>Scan a QR Code</h3>
+  <div id="qr-scanner-container"></div>
+  <div>
+    <p>Detected QR Code: {{qrCodeCtrl.qrCode}}</p>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>dc529799c34112107afbfc0ed401313f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-04 06:13:47</sys_created_on>
+        <sys_id>45821751c30112107afbfc0ed401313d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-04 06:13:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

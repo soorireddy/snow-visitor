@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="quagga.min.js">82b21751c30112107afbfc0ed401313f</sp_dependency>
+        <sp_widget display_value="QR Code Reader">dc529799c34112107afbfc0ed401313f</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-04 06:14:45</sys_created_on>
+        <sys_id>8fb2df99c34112107afbfc0ed4013133</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>quagga.min.js.QR Code Reader</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_8fb2df99c34112107afbfc0ed4013133</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-04 06:14:45</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

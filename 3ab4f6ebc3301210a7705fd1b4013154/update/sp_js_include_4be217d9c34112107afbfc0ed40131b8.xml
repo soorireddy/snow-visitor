@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js</display_name>
+        <source>url</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-04 06:16:01</sys_created_on>
+        <sys_id>4be217d9c34112107afbfc0ed40131b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_ui_script/>
+        <sys_update_name>sp_js_include_4be217d9c34112107afbfc0ed40131b8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-04 06:16:01</sys_updated_on>
+        <url>https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js</url>
+    </sp_js_include>
+</record_update>
