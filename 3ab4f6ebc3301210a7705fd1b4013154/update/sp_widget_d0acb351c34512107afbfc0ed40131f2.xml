@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+	var c = this;
+	c.qrData = '';             // Holds the input data for QR code
+	c.errorMessage = '';       // Holds error messages
+	c.generateQRCode = function() {
+		c.errorMessage = '';      // Clear previous error messages
+		if (!c.qrData) {
+			c.errorMessage = 'Please enter data to generate a QR code.';
+			return;                 // Exit if input is empty
+		}
+		try {
+			// Generate the QR code using bwip-js
+			bwipjs.toCanvas('qr-canvas', {
+				bcid: 'qrcode',       // Barcode type
+				text: c.qrData,       // Text or URL to encode
+				scale: 3,             // Scale factor
+				height: 10,           // Height of the barcode
+				width: 10,            // Width of the barcode
+				padding: 10,          // Padding around the barcode
+				margin: 10,           // Margin around the barcode
+				color: 'black',       // Barcode color
+				background: 'white',  // Background color
+			});
+		} catch (e) {
+			console.error(e);
+			c.errorMessage = 'Failed to generate QR code. Please try again.';
+		}
+	};
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.qr-code-generator {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+#qr-canvas {
+  margin-top: 10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>qr_code_generator</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>QR Code Generator</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-04 09:17:47</sys_created_on>
+        <sys_id>d0acb351c34512107afbfc0ed40131f2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>QR Code Generator</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_d0acb351c34512107afbfc0ed40131f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-04 10:00:57</sys_updated_on>
+        <template><![CDATA[<div class="qr-code-generator">
+  <h3>QR Code Generator</h3>
+
+  <div>
+    <label for="qr-input">Enter Data for QR Code:</label>
+    <input type="text" id="qr-input" ng-model="c.qrData" placeholder="Enter text or URL" />
+  </div>
+
+  <div>
+    <button ng-click="c.generateQRCode()" class="btn btn-primary">Generate QR Code</button>
+  </div>
+
+  <canvas id="qr-canvas" width="200" height="200" style="border:1px solid #000;"></canvas>
+
+  <div ng-if="c.errorMessage" class="alert alert-danger">
+    {{c.errorMessage}}
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
