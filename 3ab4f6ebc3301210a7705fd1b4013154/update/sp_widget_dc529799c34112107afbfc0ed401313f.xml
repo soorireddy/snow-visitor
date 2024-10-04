@@ -2,96 +2,98 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function($scope, $timeout) {
-  var c = this;  // Assign the controller to 'c' for consistent reference
+	var c = this;  // Assign the controller to 'c' for consistent reference
 
-  // Controller properties
-  c.qrCode = '';            // Holds the detected QR code value
-  c.isScanning = false;     // Track scanning state
-  c.timeoutMessage = '';    // Message for timeout
+	// Controller properties
+	c.qrCode = '';            // Holds the detected QR code value
+	c.isScanning = false;     // Track scanning state
+	c.timeoutMessage = '';    // Message for timeout
+	c.autoStart = false;  
+	var scanTimeout;          // Timeout handler reference
 
-  var scanTimeout;          // Timeout handler reference
+	// Function to start the QR code scanning process
+	c.startScan = function() {
+		c.timeoutMessage = '';  // Clear any previous timeout messages
+		c.qrCode = '';          // Reset the QR code display
+		c.isScanning = true;    // Set scanning state to true
 
-  // Function to start the QR code scanning process
-  c.startScan = function() {
-    c.timeoutMessage = '';  // Clear any previous timeout messages
-    c.qrCode = '';          // Reset the QR code display
-    c.isScanning = true;    // Set scanning state to true
+		// Initialize Quagga for QR code scanning
+		Quagga.init({
+			inputStream: {
+				name: "Live",
+				type: "LiveStream",
+				target: document.querySelector('#qr-scanner-container'),
+				constraints: {
+					width: 640,
+					height: 480,
+					facingMode: "environment" // Use the back camera
+				}
+			},
+			decoder: {
+				readers: [] // No barcode readers needed as we are using jsQR
+			}
+		}, function(err) {
+			if (err) {
+				console.error(err);
+				return;
+			}
+			Quagga.start();  // Start the camera stream
+			console.log("QR code scanner started.");
+		});
 
-    // Initialize Quagga for QR code scanning
-    Quagga.init({
-      inputStream: {
-        name: "Live",
-        type: "LiveStream",
-        target: document.querySelector('#qr-scanner-container'),
-        constraints: {
-          width: 640,
-          height: 480,
-          facingMode: "environment" // Use the back camera
-        }
-      },
-      decoder: {
-        readers: [] // No barcode readers needed as we are using jsQR
-      }
-    }, function(err) {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      Quagga.start();  // Start the camera stream
-      console.log("QR code scanner started.");
-    });
+		// Set a timeout to stop scanning if no QR code is detected in 15 seconds
+		scanTimeout = $timeout(function() {
+			c.stopScan();  // Stop scanning after timeout
+			c.timeoutMessage = 'Scanning timed out. Please try again.';
+		}, 15000);  // 15 seconds timeout
+	};
 
-    // Set a timeout to stop scanning if no QR code is detected in 15 seconds
-    scanTimeout = $timeout(function() {
-      c.stopScan();  // Stop scanning after timeout
-      c.timeoutMessage = 'Scanning timed out. Please try again.';
-    }, 15000);  // 15 seconds timeout
-  };
+	// Function to stop the scanning process
+	c.stopScan = function() {
+		if (c.isScanning) {
+			Quagga.stop();           // Stop the camera stream
+			c.isScanning = false;    // Set scanning state to false
+			$timeout.cancel(scanTimeout);  // Clear any running timeout
+			console.log("QR code scanner stopped.");
+		}
+	};
 
-  // Function to stop the scanning process
-  c.stopScan = function() {
-    if (c.isScanning) {
-      Quagga.stop();           // Stop the camera stream
-      c.isScanning = false;    // Set scanning state to false
-      $timeout.cancel(scanTimeout);  // Clear any running timeout
-      console.log("QR code scanner stopped.");
-    }
-  };
+	// Function to restart scanning (after stopping)
+	c.rescan = function() {
+		c.startScan();
+	};
+	if(c.autoStart) {
+		c.startScan();
+	}
+	// Quagga event listener to process video frames for QR code detection using jsQR
+	Quagga.onProcessed(function(result) {
+		if (result && result.boxes) {
+			var video = document.querySelector('video');
+			if (video) {
+				var canvas = document.createElement('canvas');
+				var context = canvas.getContext('2d');
+				canvas.width = video.videoWidth;
+				canvas.height = video.videoHeight;
+				context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  // Function to restart scanning (after stopping)
-  c.rescan = function() {
-    c.startScan();
-  };
+				var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+				var qrCode = jsQR(imageData.data, canvas.width, canvas.height);
 
-  // Quagga event listener to process video frames for QR code detection using jsQR
-  Quagga.onProcessed(function(result) {
-    if (result && result.boxes) {
-      var video = document.querySelector('video');
-      if (video) {
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+				if (qrCode) {
+					$scope.$apply(function() {
+						c.qrCode = qrCode.data;  // Update the detected QR code value
+						c.stopScan();            // Stop scanning after successful detection
+					});
+					console.log("QR Code detected: " + qrCode.data);
+				}
+			}
+		}
+	});
 
-        var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-        var qrCode = jsQR(imageData.data, canvas.width, canvas.height);
-
-        if (qrCode) {
-          $scope.$apply(function() {
-            c.qrCode = qrCode.data;  // Update the detected QR code value
-            c.stopScan();            // Stop scanning after successful detection
-          });
-          console.log("QR Code detected: " + qrCode.data);
-        }
-      }
-    }
-  });
-
-  // Stop scanning when the widget is destroyed (clean up resources)
-  $scope.$on('$destroy', function() {
-    c.stopScan();
-  });
+	// Stop scanning when the widget is destroyed (clean up resources)
+	$scope.$on('$destroy', function() {
+		c.stopScan();
+	});
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -133,36 +135,28 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-04 06:13:49</sys_created_on>
         <sys_id>dc529799c34112107afbfc0ed401313f</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>QR Code Reader</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_dc529799c34112107afbfc0ed401313f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-04 06:54:50</sys_updated_on>
+        <sys_updated_on>2024-10-04 07:31:04</sys_updated_on>
         <template><![CDATA[<div class="qr-code-scanner">
   <h3>Scan a QR Code</h3>
-  
-  <!-- Scanner Container for live camera feed -->
-  <div id="qr-scanner-container"></div>
-
-  <!-- Detected QR Code -->
   <div>
     <p>Detected QR Code: <strong>{{c.qrCode}}</strong></p>
   </div>
-
-  <!-- Action Buttons -->
   <div>
     <button ng-click="c.startScan()" ng-disabled="c.isScanning" class="btn btn-primary">Start Scan</button>
     <button ng-click="c.stopScan()" ng-disabled="!c.isScanning" class="btn btn-danger">Stop Scan</button>
     <button ng-click="c.rescan()" ng-disabled="c.isScanning" class="btn btn-success">Re-scan</button>
   </div>
-
-  <!-- Timeout Warning -->
   <div ng-if="c.timeoutMessage" class="alert alert-warning">
     {{c.timeoutMessage}}
   </div>
+  <div id="qr-scanner-container"  ng-hide="!c.isScanning"></div>
 </div>
 ]]></template>
     </sp_widget>
