@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>CatalogItemSectionHandler</name>
+        <script><![CDATA[function CatalogItemSectionHandler($http) {
+    var g_form;
+    function load(catItem, gForm) {
+        g_form = gForm;
+        console.log(" g form "+ JSON.stringify(g_form));
+        $http.get('dev191029.service-now.com/now/nav/ui/classic/params/target/sc_cat_item_producer.do?sys_id=' + catItem)
+            .then(function(res) {
+                //sections = res.data.result.sections;
+				console.log("angular provider res "+ res.data);
+            });
+    }
+
+	return {
+		'load': load
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-11 06:30:19</sys_created_on>
+        <sys_id>939ccbe7c3015210a7705fd1b40131ed</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>CatalogItemSectionHandler</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_angular_provider_939ccbe7c3015210a7705fd1b40131ed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-11 06:40:10</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>939ccbe7c3015210a7705fd1b40131ed</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-11 06:30:19</sys_created_on>
+        <sys_id>d7699fa7c3415210a7705fd1b4013191</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-11 06:30:19</sys_updated_on>
+        <table>sp_angular_provider</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

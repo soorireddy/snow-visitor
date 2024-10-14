@@ -6,9 +6,8 @@
 	c.isNative = cabrillo.isNative();
 	$scope.m = $scope.data.msgs;
 	$scope.step = 1;
-	$scope.changeStep = function(stepId) {
-		$scope.step = stepId;
-  };
+	
+	
 	$scope.hasMandatory = function() {
 		return c.mandatory && c.mandatory.length > 0;
 	};
@@ -23,7 +22,37 @@
 		sys_id: recordProducerSysId
 	}).then(function(response) {
 		$scope.sc_cat_item = response.data.recordProducer;
+		//console.log(" sc cat "+ JSON.stringify($scope.sc_cat_item.sys_id));
 	});
+	
+	/* $rootScope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
+		console.log(" CATALOG ITEM SELECTOR 1");
+		CatalogItemSectionHandler.load($scope.sc_cat_item.sys_id, gFormInstance);
+	}); */ 
+	
+	$scope.changeStep = function(stepId) {
+		$scope.step = stepId;
+		console.log("changeStep called with stepId: " + stepId);
+		$scope.server.get({ step: stepId }).then(function(response) {
+      console.log("Response from server: ", response);   
+			var visibilityConfig = response.data.visibleVariableSets;
+       console.log($scope.sc_cat_item);
+         if (visibilityConfig) {
+             for (var variableSet in visibilityConfig) {
+                  var isVisible = visibilityConfig[variableSet];
+                  console.log("Setting visibility for "+ variableSet +" " +isVisible);
+									 if ($scope.sc_cat_item._fields[variableSet]) {
+										 console.log("variable set found");
+										$scope.sc_cat_item._fields[variableSet]._visible = isVisible; 
+									} else {
+										console.log("Variable set not found in sc_cat_item.");
+									}
+									
+                }
+            }
+        });
+		
+   };
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Common Stepper Styles */
@@ -390,38 +419,47 @@ $sp-space--xxs: 2px !default;
 		var recordProducerSysId = input.sys_id;
 		data.recordProducer = $sp.getCatalogItem(recordProducerSysId);
 	}
+	
+	if (input && input.step) {
+        var currentStep = input.step;
+			gs.info("Input received: " + JSON.stringify(input));
+        gs.info("PRocessing change step in server script");
+        if (currentStep === 1) {
+            data.visibleVariableSets = { 
+                host_details_variable_set: true,  
+                health_question_variable_set: false 
+            };
+        } else if (currentStep === 2) {
+            data.visibleVariableSets = { 
+                host_details_variable_set: false,
+                health_question_variable_set: true 
+            };
+        }
+    }
+	
+})();
 
-})();]]></script>
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-02 14:34:26</sys_created_on>
         <sys_id>bbb1b230c3411210a7705fd1b401314b</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>108</sys_mod_count>
         <sys_name>Alert Catalog Item</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_bbb1b230c3411210a7705fd1b401314b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-02 18:40:46</sys_updated_on>
-        <template><![CDATA[
-<div ng-if="::!data.recordFound" class="alert alert-info">{{::m.invalidRecordMsg}}</div>
+        <sys_updated_on>2024-10-14 05:08:32</sys_updated_on>
+        <template><![CDATA[<div ng-if="::!data.recordFound" class="alert alert-info">{{::m.invalidRecordMsg}}</div>
 <div ng-if="data.recordFound">
   <div class="row">
     <!-- First Column (3 width) - Optional -->
     <div ng-if="data.showFirstColumn" class="col-md-3">
       <div class="panel panel-default">
-        
-        
         <div class="panel-heading">Sections</div>
-      
-        
-        
-        
-        
-        
-        
         <div class="panel-body">
           <ul class="stepper" ng-class="{'vertical-stepper': isLargeScreen, 'horizontal-stepper': !isLargeScreen}">
             <li class="step" ng-click="changeStep(1)" ng-class="{'active': step === 1}">
