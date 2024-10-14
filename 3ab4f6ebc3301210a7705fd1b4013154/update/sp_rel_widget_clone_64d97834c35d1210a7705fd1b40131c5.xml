@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="INSERT_OR_UPDATE">
+        <child display_value="Visitor Checkout Actions">acd97834c35d1210a7705fd1b40131c1</child>
+        <cloned>2024-10-01 15:06:12</cloned>
+        <last_validated>2024-10-01 15:06:12</last_validated>
+        <parent display_value="Popular Topics">70a162c96be07410d70bc141ee44afba</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function ($scope) {
+	var CONST = {
+		'BORDER_COLOR': 'border-color',
+		'TOPIC_SELECTOR': '.popular-topic-body-container',
+		'FN_RESIZE': 'resizePopularTopicWidget',
+		'CONTAINER': '.container',
+		'SMALL': 'small',
+		'NO_ICON': 'no-icon',
+		'POPULAR_TOPIC_BODY': '.popular-topic-body',
+		'IE_PREFIX': 'Trident/',
+		'IE': 'ie',
+		'MARGIN': 'mr-0',
+		'H5_SELECTOR': '.popular-topic-caption .popular-topic-title',
+		'FONT_SIZE': 'font-size',
+		'FIXED_COUNT': 4,
+		'LIMIT': 12
+	};
+	var c = this;
+	$scope.isLoading = false;
+	var data = c.data;
+	$scope.isFixed = false;
+	var isIE = window.navigator.userAgent.indexOf(CONST.IE_PREFIX) !== -1;
+
+	/**
+	* Return the theme class
+	* @return  {string} themeClass - Theme class
+	*
+	*/
+	$scope.getClass = function () {
+		var isHex = data &amp;&amp; data.isHex || false;
+		return !isHex ? getThemeClass(data.borderColor) : "";
+	};
+
+	/**
+	* Return the style object
+	* @return  {object} style - Style object
+	*
+	*/
+	$scope.getStyle = function () {
+		var style = {};
+		style[CONST.BORDER_COLOR] = data &amp;&amp; data.hexcode;
+		var isHex = data &amp;&amp; data.isHex || false;
+		return isHex ? style : {};
+	};
+
+	var registered = false;
+	var resizeEvents = $._data(window, "events").resize;
+	if (resizeEvents) {
+		resizeEvents.forEach(function (callback) {
+			var handler = callback.handler;
+			var name = handler.name;
+			if (name === CONST.FN_RESIZE) {
+				registered = true;
+			}
+		});
+	}
+
+	if (!registered) {
+		$(window).resize(resizePopularTopicWidget);
+	}
+
+	$scope.$evalAsync(resizePopularTopicWidget);
+	$scope.$evalAsync(topicTooltip);
+
+	/**
+	* Return theme class name based on option
+	* @return  {string} theme-class - theme class name
+	*
+	*/
+	function getThemeClass(background) {
+		var THEME = {
+			'border-primary': 'primary-color',
+			'border-secondary': 'secondary-color',
+			'border-tertiary': 'tertiary-color'
+		};
+		var result = 'tertiary-color';
+		if (background in THEME)
+			result = THEME[background];
+
+		return result;
+	}
+
+	/**
+	* Resize the topic column based on the width
+	*/
+	function resizePopularTopicWidget() {
+		var topicCont = $(CONST.TOPIC_SELECTOR);
+		if (isIE) {
+			resizeWidgetIE(topicCont);
+		}
+		topicTooltip();
+	}
+
+	/**
+	 * IE responsive support
+	 */
+	function resizeWidgetIE(topicCont) {
+		var MIN_TOPIC_WIDTH = 150;
+		var MAX_TOPIC_WIDTH = 250;
+		var PADDING = 16;
+		var MIN_BREAK_POINT = 330;
+		var MOBILE_WIDTH = 400;
+		$(CONST.TOPIC_SELECTOR).addClass(CONST.IE);
+		topicCont.each(function (i, container) {
+			var availablePanelWidth = getPanelWidth(container);
+			var isSmall = $(container).hasClass(CONST.SMALL);
+			var noIcon = $(container).hasClass(CONST.NO_ICON);
+			var limit = CONST.LIMIT;
+			var numberOfTopic = Math.min(Math.round(availablePanelWidth / MIN_TOPIC_WIDTH), limit);
+			numberOfTopic = calcTopicCount(numberOfTopic, MIN_TOPIC_WIDTH, availablePanelWidth, PADDING, true);
+			isSmall = true;
+			if (availablePanelWidth &lt;= MOBILE_WIDTH) {
+				numberOfTopic = 2;
+				if ((isSmall &amp;&amp; !noIcon) || (availablePanelWidth &lt;= MIN_BREAK_POINT)) {
+					numberOfTopic = 1;
+				}
+			}
+			var topicWidth = Math.floor((availablePanelWidth - ((numberOfTopic) * PADDING) - 1) / numberOfTopic);
+			topicWidth = (numberOfTopic === 1 &amp;&amp; isSmall &amp;&amp; !noIcon) ? availablePanelWidth : Math.min(topicWidth, MAX_TOPIC_WIDTH);
+			var topicList = $(CONST.POPULAR_TOPIC_BODY, container);
+			topicList.each(function (j, topic) {
+				$(topic).css('width', topicWidth);
+				if (isSmall &amp;&amp; !noIcon) {
+					$(topic).css('max-width', 'inherit');
+				}
+			});
+		});
+	}
+
+	/**
+	 * Calculating topic count to be shown
+	 */
+	function calcTopicCount(topicCount, minTopicWidth, maxWidth, padWidth, isIE) {
+		var calcWidth = calculateWidth(minTopicWidth, padWidth, topicCount, isIE);
+		while ((topicCount &gt; 0) &amp;&amp; (calcWidth &gt; maxWidth)) {
+			topicCount--;
+			calcWidth = calculateWidth(minTopicWidth, padWidth, topicCount, isIE);
+		}
+		return topicCount;
+	}
+
+	/**
+	 * Calacuate width based on available space
+	 */
+	function calculateWidth(minTopicWidth, padWidth, topicCount, isIE) {
+		var calcWidth = 0;
+		var gridGapCount = topicCount - 1;
+		if (isIE) {
+			gridGapCount = topicCount;
+		}
+		calcWidth = (minTopicWidth * topicCount) + (gridGapCount * padWidth);
+		return calcWidth;
+	}
+
+	/**
+	 * Get panel space of widget
+	 */
+	function getPanelWidth(topicPanel) {
+		var panelWidth = $(topicPanel).width();
+		var parentWidth = $(topicPanel).parents(CONST.CONTAINER).width() || panelWidth;
+		return Math.min(parentWidth, panelWidth);
+	}
+
+	/**
+	 * Checking ellipsis applied to topic names
+	 */
+	function checkEllipsis(tooltip) {
+		if (isIE) {
+			return tooltip.scrollWidth &gt; $(tooltip).parent().width();
+		}
+		var fontSize = parseFloat($(tooltip).css(CONST.FONT_SIZE));
+		return (($(tooltip).height() + fontSize / 2) &lt; tooltip.scrollHeight);
+	}
+
+	/**
+	 * Applying tooltip to ellipsis elements
+	 */
+	function topicTooltip() {
+		var topics = $(CONST.H5_SELECTOR);
+		topics.tooltip('enable');
+		topics.each(function (i, tooltip) {
+			if (!checkEllipsis(tooltip)) {
+				$(tooltip).tooltip('disable');
+			}
+		});
+	}
+
+    c.asyncGet = function() {
+        $scope.isLoading = true;
+        c.data.action = "loadData";
+        c.server.update().then(function(response) {
+            fetchPopularTopicsData();
+        });
+    }
+    var fetchPopularTopicsData = function() {
+        $scope.isLoading = false;
+        $scope.isFixed = (data.popularTopics &amp;&amp; (data.popularTopics.length &lt; CONST.FIXED_COUNT)) || false;
+        setTimeout(resizePopularTopicWidget);
+        setTimeout(topicTooltip);
+    };
+
+    var load_config = c.data.load_config;
+    if (load_config === "async")
+        setTimeout(c.asyncGet);
+    else
+        fetchPopularTopicsData();
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;/*** Variables declaration **/
+
+$border-radius: 6px;
+$shadow: 0px 2px 10px rgba(23, 40, 52, 0.08);
+$normal-img-size: 56px;
+$small-img-size: 32px;
+$rm: 10px;
+$text-primary: #181a1f !default;
+$color-sp-separator: #eaeaea !default;
+$headings-font-weight: 600 !default;
+$border-primary: #8790a1 !default;
+$border-secondary: #acb2be !default;
+$border-tertiary: #dadde2 !default;
+$sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
+
+.popular-topic-panel * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	p {
+		margin: 0 0 1.1rem;
+	}
+}
+
+.popular-topic-panel {
+	background-color: $color-lightest;
+	border-radius: $border-radius-large;
+	box-shadow: $shadow;
+	margin-bottom: $rm * 1.6;
+	color: $text-primary;
+	border-color: transparent;
+}
+
+.popular-topic-panel.small {
+	font-size: $rm * 1.6;
+}
+
+.popular-topic-panel &amp;gt; .popular-topic-heading {
+	word-wrap: break-word;
+	padding: $rm * 2.4;
+	color: $text-primary;
+	border-top-right-radius: $border-radius;
+	border-top-left-radius: $border-radius;
+	border-bottom: 1px solid $color-sp-separator;
+	background: none;
+}
+
+.popular-topic-body-container {
+	padding: 1.6 * $rm 2.4 * $rm;
+	display: grid;
+	grid-auto-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-gap: 1.6 * $rm;
+}
+.popular-topic-empty-state {
+	height: 15 * $rm;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2.4rem;
+	text-align: center;
+	.popular-topic-empty-text{
+		font-size: $font-size-base;
+		color:$text-secondary;
+	}
+}
+.popular-topic-body {
+	margin-bottom: 0;
+	background-color: $color-lightest;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: $border-radius-base;
+}
+
+.popular-topic-body:hover {
+	box-shadow: $sp-panel-box-shadow;
+}
+
+.popular-topic-body &amp;gt; .popular-topic-link {
+	text-decoration: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: $text-primary;
+	display: block;
+	padding: 1em;
+	height: 100%;
+	border-radius: $border-radius-base;
+}
+
+.popular-topic-body-container.no-icon:not(.small) .popular-topic-link {
+	padding-top: $rm * 5.2;
+	padding-bottom: $rm * 5.2;
+}
+
+.popular-topic-body-container.small .popular-topic-link {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.popular-topic-body img {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	width: $normal-img-size;
+	height: $normal-img-size;
+}
+
+.popular-topic-body-container.small img {
+	width: $small-img-size;
+	height: $small-img-size;
+}
+
+.popular-topic-body .popular-topic-caption {
+	font-size: 1em;
+	text-align: center;
+}
+
+.popular-topic-caption .popular-topic-title {
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: $text-primary;
+	font-weight: $headings-font-weight;
+}
+
+.popular-topic-caption .tooltip-inner {
+	padding: 0.3rem 0.8rem;
+}
+
+.popular-topic-caption .tooltip-arrow {
+	bottom: -5px;
+}
+
+.popular-topic-body-container:not(.small) .popular-topic-caption {
+	padding-top: $rm * 1.6;
+	margin-bottom: $rm * 0.5;
+	.popular-topic-title {
+		font-size: $rm * 1.6;
+	}
+}
+
+.popular-topic-body-container.small .popular-topic-caption {
+	width: calc(100% - $small-img-size);
+	text-align: left;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 1em;
+	margin-left: 0;
+}
+
+.popular-topic-body-container.no-icon .popular-topic-caption {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	text-align: center;
+	max-width: none;
+}
+
+.popular-topic-body-container.no-icon img {
+	display: none;
+}
+
+.primary-color {
+	border-color: $border-primary;
+}
+
+.secondary-color {
+	border-color: $border-secondary;
+}
+
+.tertiary-color {
+	border-color: $border-tertiary;
+}
+
+@media screen and (min-width: 330px) {
+	.popular-topic-body-container {
+		grid-template-columns: repeat(2, minmax($rm * 13, 1fr));
+		grid-gap: $rm * 1.6 $rm;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.popular-topic-body-container.small:not(.no-icon) {
+		grid-template-columns: 1fr;
+	}
+	.popular-topic-body-container {
+		padding: 1.6 * $rm;
+	}
+}
+
+@media screen and (min-width: 430px) {
+	.popular-topic-body {
+		max-width: $rm * 25;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.popular-topic-body-container:not(.fixed) {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		grid-gap: 1.6 * $rm;
+	}
+	.popular-topic-body-container.fixed {
+		grid-template-columns: repeat(auto-fill, minmax($rm * 15, 1fr));
+		grid-gap: 1.6 * $rm;
+	}
+}
+
+.ie.popular-topic-body-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 0;
+	padding-right: 0.8 * $rm;
+}
+
+.ie .popular-topic-body {
+	margin-right: $rm * 1.6;
+	margin-bottom: $rm * 1.6;
+	min-width: $rm * 15;
+	max-width: $rm * 25;
+}
+
+.ie .popular-topic-title {
+	white-space: nowrap;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;popular-topics&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+    controller.keydownAction = function(event) {
+        if (event.keyCode === 13 || event.keyCode === 32) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.target.click();
+        }
+    };
+}]]&gt;&lt;/link&gt;&lt;name&gt;Popular Topics&lt;/name&gt;&lt;option_schema&gt;[{"hint":"Title name of the widget","name":"widget_title","section":"Presentation","default_value":"Popular topics","label":"Title","type":"string"},{"hint":"Number of topics to be shown","name":"topic_limit","section":"Presentation","default_value":"8","label":"Number of topics","type":"choice","choices":[{"label":"4","value":"4"},{"label":"6","value":"6"},{"label":"8","value":"8"},{"label":"12","value":"12"}]},{"hint":"Display size (Normal / Small)","name":"display_size","section":"Presentation","default_value":"Normal","label":"Display size","type":"choice","choices":[{"label":"Normal","value":"Normal"},{"label":"Small","value":"Small"}]},{"hint":"Border color of popular topic","name":"border_color","section":"Presentation","default_value":"Border-tertiary","label":"Border color","type":"choice","choices":[{"label":"Border-primary","value":"Border-primary"},{"label":"Border-secondary","value":"Border-secondary"},{"label":"Border-tertiary","value":"Border-tertiary"},{"label":"Hexcode","value":"Hexcode"}]},{"hint":"Hex code of border color","name":"hexcode","section":"Presentation","default_value":"#FFFFFF","label":"Hexcode","type":"string"},{"hint":"Icon to be shown for popular topic","name":"icon","section":"Presentation","default_value":"true","label":"Show topic icon","type":"boolean"},{"name":"load_config","section":"other","default_value":"async","label":"Load configuration","type":"choice","choices":[{"label":"Synchronous","value":"sync"},{"label":"Asynchronous","value":"async"}]},{"hint":"Shows empty state if the widget content is empty.","name":"show_empty_state","section":"other","default_value":"false","label":"Show empty state","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function () {
+	data.load_config = options.load_config;
+	if(data.load_config === "async" &amp;&amp; !input)
+		return;
+	var limit = options.topic_limit;
+	var taxonomy = $sp.getTaxonomies();
+	if (!taxonomy || taxonomy.length === 0) {
+		return;
+	}
+	
+	var session = gs.getSession();
+	var popularTopicsDataKey = 'sn_ex_sp_popular_topics_data' + taxonomy + session.getLanguage() + gs.getUserID();
+	var popularTopicsData = JSON.parse(session.getClientData(popularTopicsDataKey));
+	if (popularTopicsData === null || popularTopicsData.length != limit) {
+		data.popularTopics = new PopularTopicsUtil().getPopularTopics(taxonomy, limit, false);
+		session.putClientData(popularTopicsDataKey, JSON.stringify(data.popularTopics));
+	} else {
+		data.popularTopics = popularTopicsData;
+	}
+	data.options = options;
+	populateOptions(data);
+})();
+
+/**
+ * Read and initialize the options
+ * @param {object} data - Data object
+ *
+ */
+function populateOptions(data) {
+	var CONST = {
+		'HEX': 'hexcode',
+		'NORMAL': 'normal',
+		'SMALL': 'small',
+		'TRUE': 'true',
+		'FALSE': 'false',
+		'DEFAULT_COLOR': '#FFFFFF',
+		'DEFAULT_BORDER_OPTION': 'border-tertiary',
+		'REGEX': /^#([0-9A-F]{3}){1,2}$/i
+	};
+	var option = data.options;
+	data.isNormal = (option.display_size.toLowerCase() === CONST.NORMAL);
+	data.isSmall = (option.display_size.toLowerCase() === CONST.SMALL);
+	data.borderColor = option.border_color.toLowerCase();
+	data.icon = option.icon.toLowerCase() === CONST.TRUE;
+	data.isHex = (data.borderColor === CONST.HEX);
+	data.hexcode = option.hexcode;
+	var title = [option.widget_title];
+	data.widgetTitle = gs.getMessage(title);
+
+	if (data.isHex) {
+		if (!CONST.REGEX.test(option.hexcode)) {
+			data.borderColor = CONST.DEFAULT_BORDER_OPTION;
+			data.isHex = false;
+		}
+	}
+}
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-06-03 10:23:27&lt;/sys_created_on&gt;&lt;sys_id&gt;70a162c96be07410d70bc141ee44afba&lt;/sys_id&gt;&lt;sys_mod_count&gt;181&lt;/sys_mod_count&gt;&lt;sys_name&gt;Popular Topics&lt;/sys_name&gt;&lt;sys_package display_value="Employee Center" source="sn_ex_sp"&gt;4249e63a28d54d61bb6fbf61fd86cccb&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Employee Center"&gt;4249e63a28d54d61bb6fbf61fd86cccb&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_70a162c96be07410d70bc141ee44afba&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-02-29 08:31:55&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="popular-topic-panel panel panel-default panel-wrapper b" ng-if="(data.popularTopics &amp;&amp; data.popularTopics.length &gt; 0) || data.options.show_empty_state === 'true'"&gt;
+	&lt;div class="popular-topic-heading panel-heading b-b"&gt;
+		&lt;h3 class="panel-title"&gt;{{data.widgetTitle}}&lt;/h3&gt;
+	&lt;/div&gt;
+	&lt;div class="popular-topic-panel-body"&gt;
+		&lt;div class="popular-topic-empty-state" ng-if="data.options.show_empty_state === 'true' &amp;&amp; (!data.popularTopics || data.popularTopics.length === 0)"&gt;
+			&lt;p class="popular-topic-empty-text"&gt;
+				${We don't have any popular topics to show you yet.}
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="popular-topic-body-container"
+			ng-class="{'small': data.isSmall, 'no-icon': !data.icon, 'fixed': isFixed }" 
+			ng-if="data.popularTopics &amp;&amp; data.popularTopics.length &gt; 0"&gt;
+			
+			&lt;div class="popular-topic-body" ng-class="getClass()" ng-style="getStyle()"
+				ng-repeat="topic in data.popularTopics"&gt;
+				&lt;a class="popular-topic-link" data-ng-attr-aria-label="{{topic.topic}}"
+					ng-href="{{topic.topicUrl}}" ng-keydown="c.keydownAction($event)"&gt;
+					&lt;img ng-src="{{topic.icon}}" alt="" /&gt;
+					&lt;div class="popular-topic-caption"&gt;
+						&lt;span class = "popular-topic-title" data-toggle="tooltip" title="{{topic.topic}}"&gt;
+							{{topic.topic}}
+						&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:05:24</sys_created_on>
+        <sys_id>64d97834c35d1210a7705fd1b40131c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>acd97834c35d1210a7705fd1b40131c1</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_64d97834c35d1210a7705fd1b40131c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:05:24</sys_updated_on>
+    </sp_rel_widget_clone>
+</record_update>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name>.container-margin { margin-top: 120px;}</container_class_name>
+        <name>Copy of Visitor Checkout Page (1) - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="copy_of_visitor_checkout_page_1">3d0abcf0c35d1210a7705fd1b401318b</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:06:17</sys_created_on>
+        <sys_id>710abc34c35d1210a7705fd1b401317d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Visitor Checkout Page (1) - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_container_710abc34c35d1210a7705fd1b401317d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:06:17</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>sp_container_710abc34c35d1210a7705fd1b401317d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name>.container-margin { margin-top: 120px;}</container_class_name><name>Copy of Visitor Checkout Page (1) - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="copy_of_visitor_checkout_page_1">3d0abcf0c35d1210a7705fd1b401318b</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-10-14 16:06:17</sys_created_on><sys_id>710abc34c35d1210a7705fd1b401317d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Copy of Visitor Checkout Page (1) - Container 2</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>sp_container_710abc34c35d1210a7705fd1b401317d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-10-14 16:06:17</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1198499199</payload_hash>
+        <record_name>Copy of Visitor Checkout Page (1) - Container 2</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:06:18</sys_created_on>
+        <sys_id>f10abc34c35d1210a7705fd1b401317f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1928bc7c4900000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:06:18</sys_updated_on>
+        <type>Container</type>
+        <update_guid>f50abc34365d12108cb9088c15d1897e</update_guid>
+        <update_guid_history>f50abc34365d12108cb9088c15d1897e:1198499199</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Visitor Checkout Page (1) - Container 2">4c4af074c35d1210a7705fd1b40131c6</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:07:16</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>002dd43334474168b082ee029c0bde40</sys_id>
+        <sys_metadata>710abc34c35d1210a7705fd1b401317d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Visitor Checkout Page (1) - Container 2</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>sp_container_710abc34c35d1210a7705fd1b401317d</sys_update_name>
+        <sys_update_version display_value="sp_container_710abc34c35d1210a7705fd1b401317d">f10abc34c35d1210a7705fd1b401317f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:07:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

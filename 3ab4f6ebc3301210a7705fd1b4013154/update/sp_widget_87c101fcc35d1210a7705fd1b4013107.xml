@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>visitor_checkout_success</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Visitor Checkout Success</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:40:14</sys_created_on>
+        <sys_id>87c101fcc35d1210a7705fd1b4013107</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Visitor Checkout Success</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_87c101fcc35d1210a7705fd1b4013107</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:48:18</sys_updated_on>
+        <template><![CDATA[<div text-center> 
+  <div class="row col-12 text-center" >
+    <i class="fa fa-check" style="border:1px solid green; width:125px; height:125px;border-radius:50%;font-size:120px;color:darkgreen;" aria-hidden="true"></i>
+  </div>
+  <div class="row col-12 text-center">
+    <h3>
+      You have successfully checked out.
+    </h3>
+  </div>
+  <div class="row col-6 text-center">
+    <button class="btn btn-primary btn-block m-l m-r m-t">Home</button>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

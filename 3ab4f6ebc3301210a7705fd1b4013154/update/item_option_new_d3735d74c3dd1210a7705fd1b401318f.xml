@@ -41,13 +41,13 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>visit_id</name>
-        <order>10</order>
+        <name>qr_scan</name>
+        <order>30</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Visit ID</question_text>
+        <question_text>QR Scan</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -71,23 +71,23 @@
         <scale_min>0</scale_min>
         <show_help>false</show_help>
         <show_help_on_load>false</show_help_on_load>
-        <sp_widget/>
+        <sp_widget display_value="QR Code Reader">dc529799c34112107afbfc0ed401313f</sp_widget>
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>44fd7620c3d11210a7705fd1b4013170</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Visit ID</sys_name>
+        <sys_created_on>2024-10-14 17:58:13</sys_created_on>
+        <sys_id>d3735d74c3dd1210a7705fd1b401318f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>QR Scan</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>item_option_new_44fd7620c3d11210a7705fd1b4013170</sys_update_name>
+        <sys_update_name>item_option_new_d3735d74c3dd1210a7705fd1b401318f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 17:55:43</sys_updated_on>
+        <sys_updated_on>2024-10-14 17:58:13</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>6</type>
+        <type>14</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -95,7 +95,7 @@
         <validate_regex/>
         <variable_name/>
         <variable_set display_value="Visit Search">1e58bee4c3911210a7705fd1b4013113</variable_set>
-        <variable_width>100</variable_width>
+        <variable_width/>
         <visibility>1</visibility>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
@@ -103,22 +103,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=44fd7620c3d11210a7705fd1b4013170"/>
-    <fx_price action="delete_multiple" query="id=44fd7620c3d11210a7705fd1b4013170"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=d3735d74c3dd1210a7705fd1b401318f"/>
+    <fx_price action="delete_multiple" query="id=d3735d74c3dd1210a7705fd1b401318f"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>44fd7620c3d11210a7705fd1b4013170</id>
+        <id>d3735d74c3dd1210a7705fd1b401318f</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>c84ef220c3d11210a7705fd1b40131c9</sys_id>
+        <sys_created_on>2024-10-14 17:58:13</sys_created_on>
+        <sys_id>25a311b4c3dd1210a7705fd1b4013159</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 07:05:30</sys_updated_on>
+        <sys_updated_on>2024-10-14 17:58:13</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -126,16 +126,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>44fd7620c3d11210a7705fd1b4013170</id>
+        <id>d3735d74c3dd1210a7705fd1b401318f</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>804ef220c3d11210a7705fd1b40131c9</sys_id>
+        <sys_created_on>2024-10-14 17:58:13</sys_created_on>
+        <sys_id>e9a311b4c3dd1210a7705fd1b4013158</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 07:05:30</sys_updated_on>
+        <sys_updated_on>2024-10-14 17:58:13</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

@@ -2,13 +2,13 @@
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
         <attributes/>
-        <cat_item/>
+        <cat_item display_value="ID Verification">287a77e0c3191210a7705fd1b4013179</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
         <choice_field/>
         <choice_table/>
         <create_roles/>
-        <default_html_value/>
+        <default_html_value><![CDATA[<p><span style="font-size: 18pt;"><strong>Non-Disclosure Agreement (NDA)</strong></span><br /><span style="font-size: 12pt;">This Non-Disclosure Agreement (the &#34;Agreement&#34;) is entered into as of [Date] by and between [Company Name] (&#34;Disclosing Party&#34;) and the undersigned visitor (&#34;Receiving Party&#34;).</span><br /><span style="font-size: 12pt;">The Receiving Party agrees not to disclose any confidential information obtained during the visit to the Disclosing Party’s premises. This includes, but is not limited to, technical data, business strategies, proprietary information, and any other sensitive materials.</span><br /><span style="font-size: 12pt;">The obligations of confidentiality under this Agreement will remain in effect for a period of 3 years from the date of disclosure.</span><br /><span style="font-size: 12pt;">By signing below, the Receiving Party acknowledges the terms of this Agreement and agrees to be bound by its conditions.</span></p>]]></default_html_value>
         <default_value/>
         <delete_roles/>
         <delivery_plan/>
@@ -41,20 +41,20 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>visit_id</name>
-        <order>10</order>
+        <name>nda</name>
+        <order>60</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Visit ID</question_text>
-        <read_only>false</read_only>
+        <question_text>Non-Disclosure Agreement</question_text>
+        <read_only>true</read_only>
         <read_roles/>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
-        <record_producer_table/>
+        <record_producer_table>x_845458_visitorsa_visitor</record_producer_table>
         <reference/>
         <reference_qual/>
         <reference_qual_condition/>
@@ -75,27 +75,27 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>44fd7620c3d11210a7705fd1b4013170</sys_id>
+        <sys_created_on>2024-10-14 12:56:19</sys_created_on>
+        <sys_id>1e6ec07cc3591210a7705fd1b40131b4</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_name>Visit ID</sys_name>
+        <sys_name>Non-Disclosure Agreement</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>item_option_new_44fd7620c3d11210a7705fd1b4013170</sys_update_name>
+        <sys_update_name>item_option_new_1e6ec07cc3591210a7705fd1b40131b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 17:55:43</sys_updated_on>
+        <sys_updated_on>2024-10-14 13:00:31</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>6</type>
+        <type>23</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <validate_regex/>
         <variable_name/>
-        <variable_set display_value="Visit Search">1e58bee4c3911210a7705fd1b4013113</variable_set>
-        <variable_width>100</variable_width>
+        <variable_set/>
+        <variable_width/>
         <visibility>1</visibility>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
@@ -103,22 +103,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=44fd7620c3d11210a7705fd1b4013170"/>
-    <fx_price action="delete_multiple" query="id=44fd7620c3d11210a7705fd1b4013170"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=1e6ec07cc3591210a7705fd1b40131b4"/>
+    <fx_price action="delete_multiple" query="id=1e6ec07cc3591210a7705fd1b40131b4"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>44fd7620c3d11210a7705fd1b4013170</id>
+        <id>1e6ec07cc3591210a7705fd1b40131b4</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>c84ef220c3d11210a7705fd1b40131c9</sys_id>
+        <sys_created_on>2024-10-14 12:56:20</sys_created_on>
+        <sys_id>478ec07cc3591210a7705fd1b401319f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 07:05:30</sys_updated_on>
+        <sys_updated_on>2024-10-14 12:56:20</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -126,16 +126,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>44fd7620c3d11210a7705fd1b4013170</id>
+        <id>1e6ec07cc3591210a7705fd1b40131b4</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-14 07:05:30</sys_created_on>
-        <sys_id>804ef220c3d11210a7705fd1b40131c9</sys_id>
+        <sys_created_on>2024-10-14 12:56:20</sys_created_on>
+        <sys_id>878ec07cc3591210a7705fd1b401319e</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 07:05:30</sys_updated_on>
+        <sys_updated_on>2024-10-14 12:56:20</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

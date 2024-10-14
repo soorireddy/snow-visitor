@@ -418,14 +418,14 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
         "show_empty_state": "false"
     }
 }</demo_data>
-        <description>visitor_actions</description>
+        <description>visitor_checkin_actions</description>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>visitor_actions</id>
+        <id>visitor_checkin_actions</id>
         <internal>false</internal>
-        <link/>
-        <name>Visitor Actions</name>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Visitor Checkin  Actions</name>
         <option_schema>[&#13;
     {&#13;
         "hint": "Title name of the widget",&#13;
@@ -563,138 +563,90 @@ $sp-panel-box-shadow: 0 4px 8px 0 rgba(23, 40, 52, 0.08) !default;
 ]</option_schema>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {
-    data.options = options;
-    data.popularTopics = [];
-    var session = gs.getSession();
-    var popularTopicsDataKey = 'alert_vm_list_data';
-    var popularTopicsData = [{
-            "topicUrl": "?id=sc_cat_item&sys_id=71f7ba8cc3811210a7705fd1b4013115",
-            "topicId": "ecc49ba7c3053010069aec4b7d40dd89",
-            "icon": "fa fa-user-plus",
-            "topic": "Register Visitor",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=alert_cat_item&sys_id=71f7ba8cc3811210a7705fd1b4013115",
-            "topicId": "0fb45ba7c3053010069aec4b7d40dd40",
-            "icon": "fa fa-ticket",
-            "topic": "Register Visit",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=visitor_checkin_page",
-            "topicId": "d22413a7c3053010069aec4b7d40ddf8",
-            "icon": "fa fa-check-square-o",
-            "topic": "Check-in",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=1325dba7c3053010069aec4b7d40ddb4",
-            "topicId": "1325dba7c3053010069aec4b7d40ddb4",
-            "icon": "fa fa-sign-out",
-            "topic": "Check-out",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=01a497a7c3053010069aec4b7d40dd14",
-            "topicId": "01a497a7c3053010069aec4b7d40dd14",
-            "icon": "fa fa-thumbs-o-up",
-            "topic": "Verify Visitor",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=2a4513e7c3053010069aec4b7d40dd6e",
-            "topicId": "2a4513e7c3053010069aec4b7d40dd6e",
-            "icon": "fa fa-refresh",
-            "topic": "Reschedule Visit",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=988497a7c3053010069aec4b7d40ddea",
-            "topicId": "988497a7c3053010069aec4b7d40ddea",
-            "icon": "fa fa-minus-square",
-            "topic": "Cancel Visit",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
-            "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-            "icon": "fa fa-handshake-o",
-            "topic": "Assign a Host",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
-            "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-            "icon": "fa fa-print",
-            "topic": "Print Visitor Badge",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
-            "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-            "icon": "fa fa-exchange",
-            "topic": "Monitor Visits",
-            "color": "#000"
-        },
-        {
-            "topicUrl": "?id=emp_taxonomy_topic&topic_id=5c4513e7c3053010069aec4b7d40dd01",
-            "topicId": "5c4513e7c3053010069aec4b7d40dd01",
-            "icon": "fa fa-fire-extinguisher",
-            "topic": "Emergency Evacuation",
-            "color": "#000"
-        }
-    ];
-    data.popularTopics = popularTopicsData;
-    session.putClientData(popularTopicsDataKey, JSON.stringify(data.popularTopics));
-
-    data.options = options;
-    populateOptions(data);
+        <script><![CDATA[(function () {
+	data.options = options;
+	data.popularTopics =[];
+	var session = gs.getSession();
+	var popularTopicsDataKey = 'alert_vm_list_data';
+	var popularTopicsData = [
+            {
+                "topicUrl": "?id=sc_cat_item&sys_id=96d7b2e4c3911210a7705fd1b401318f",
+                "topicId": "ecc49ba7c3053010069aec4b7d40dd89",
+                "icon": "fa fa-qrcode",
+                "topic": "QR Code",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=alert_cat_item&sys_id=96d7b2e4c3911210a7705fd1b401318f",
+                "topicId": "0fb45ba7c3053010069aec4b7d40dd40",
+                "icon": "fa fa-font",
+                "topic": "Visit ID",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=sc_cat_item&sys_id=96d7b2e4c3911210a7705fd1b401318f",
+                "topicId": "1325dba7c3053010069aec4b7d40ddb4",
+                "icon": "fa fa-user-o",
+                "topic": "Face ID",
+							  "color":"#000"
+            },
+            {
+                "topicUrl": "?id=sc_cat_item&sys_id=96d7b2e4c3911210a7705fd1b401318f",
+                "topicId": "01a497a7c3053010069aec4b7d40dd14",
+                "icon": "fa fa-wifi",
+                "topic": "NFC/RFID",
+							  "color":"#000"
+            }
+        ];
+	data.popularTopics = popularTopicsData;
+	session.putClientData(popularTopicsDataKey, JSON.stringify(data.popularTopics));
+	
+	data.options = options;
+	populateOptions(data);
 })();
 
 
 function populateOptions(data) {
-    var CONST = {
-        'HEX': 'hexcode',
-        'NORMAL': 'normal',
-        'SMALL': 'small',
-        'TRUE': 'true',
-        'FALSE': 'false',
-        'DEFAULT_COLOR': '#FFFFFF',
-        'DEFAULT_BORDER_OPTION': 'border-tertiary',
-        'REGEX': /^#([0-9A-F]{3}){1,2}$/i
-    };
-    var option = data.options;
-    data.isNormal = (option.display_size.toLowerCase() === CONST.NORMAL);
-    data.isSmall = (option.display_size.toLowerCase() === CONST.SMALL);
-    data.borderColor = option.border_color.toLowerCase();
-    data.icon = option.icon.toLowerCase() === CONST.TRUE;
-    data.isHex = (data.borderColor === CONST.HEX);
-    data.hexcode = option.hexcode;
-    var title = [option.widget_title];
-    data.widgetTitle = gs.getMessage(title);
+	var CONST = {
+		'HEX': 'hexcode',
+		'NORMAL': 'normal',
+		'SMALL': 'small',
+		'TRUE': 'true',
+		'FALSE': 'false',
+		'DEFAULT_COLOR': '#FFFFFF',
+		'DEFAULT_BORDER_OPTION': 'border-tertiary',
+		'REGEX': /^#([0-9A-F]{3}){1,2}$/i
+	};
+	var option = data.options;
+	data.isNormal = (option.display_size.toLowerCase() === CONST.NORMAL);
+	data.isSmall = (option.display_size.toLowerCase() === CONST.SMALL);
+	data.borderColor = option.border_color.toLowerCase();
+	data.icon = option.icon.toLowerCase() === CONST.TRUE;
+	data.isHex = (data.borderColor === CONST.HEX);
+	data.hexcode = option.hexcode;
+	var title = [option.widget_title];
+	data.widgetTitle = gs.getMessage(title);
 
-    if (data.isHex) {
-        if (!CONST.REGEX.test(option.hexcode)) {
-            data.borderColor = CONST.DEFAULT_BORDER_OPTION;
-            data.isHex = false;
-        }
-    }
+	if (data.isHex) {
+		if (!CONST.REGEX.test(option.hexcode)) {
+			data.borderColor = CONST.DEFAULT_BORDER_OPTION;
+			data.isHex = false;
+		}
+	}
 }]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-01 15:06:12</sys_created_on>
-        <sys_id>fe9fa5a4c3859210a7705fd1b4013191</sys_id>
-        <sys_mod_count>79</sys_mod_count>
-        <sys_name>Visitor Actions</sys_name>
+        <sys_created_on>2024-10-14 15:27:22</sys_created_on>
+        <sys_id>a3117c38c31d1210a7705fd1b401312c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Visitor Checkin  Actions</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
-        <sys_update_name>sp_widget_fe9fa5a4c3859210a7705fd1b4013191</sys_update_name>
+        <sys_update_name>sp_widget_a3117c38c31d1210a7705fd1b401312c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 16:49:25</sys_updated_on>
+        <sys_updated_on>2024-10-14 16:02:41</sys_updated_on>
         <template><![CDATA[<div class="popular-topic-panel panel panel-default panel-wrapper b"
      style="margin-top: 10px !important;" >
   <div class="popular-topic-heading panel-heading b-b">
@@ -733,13 +685,13 @@ function populateOptions(data) {
 ]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
-        <id>fe9fa5a4c3859210a7705fd1b4013191</id>
+        <id>a3117c38c31d1210a7705fd1b401312c</id>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-10-01 15:07:11</sys_created_on>
-        <sys_id>51dfada4c3859210a7705fd1b401312f</sys_id>
+        <sys_created_on>2024-10-14 15:27:49</sys_created_on>
+        <sys_id>da313478c31d1210a7705fd1b4013133</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 15:07:11</sys_updated_on>
+        <sys_updated_on>2024-10-14 15:27:49</sys_updated_on>
         <table>sp_widget</table>
         <use_es_latest>true</use_es_latest>
     </sys_es_latest_script>

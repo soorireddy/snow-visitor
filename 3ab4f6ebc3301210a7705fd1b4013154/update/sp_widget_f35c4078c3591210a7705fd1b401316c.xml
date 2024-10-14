@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $timeout) {
+  /* widget controller */
+  var c = this;
+	$scope.signatureData = '';
+
+  var signaturePad;
+  var canvas;
+
+  // Initialize the signature pad after the DOM is ready
+  $timeout(function() {
+    canvas = document.getElementById('signature-pad');
+    signaturePad = new SignaturePad(canvas);
+
+    // Function to resize the canvas
+    function resizeCanvas() {
+      var ratio = Math.max(window.devicePixelRatio || 1, 1);
+      canvas.width = canvas.offsetWidth * ratio;
+      canvas.height = canvas.offsetHeight * ratio;
+      canvas.getContext('2d').scale(ratio, ratio);
+      signaturePad.clear(); // Clear the canvas after resizing
+    }
+
+    // Resize canvas initially and on window resize
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  }, 0);
+
+  // Clear the signature
+  $scope.clearSignature = function() {
+    if (signaturePad) {
+      signaturePad.clear();
+      $scope.signatureData = '';
+    }
+  };
+
+  // Save the signature as a data URL
+  $scope.saveSignature = function() {
+    if (signaturePad && !signaturePad.isEmpty()) {
+      $scope.signatureData = signaturePad.toDataURL();
+    } else {
+      alert('Please provide a signature first.');
+    }
+  };
+
+  // Clean up when the widget is destroyed to avoid memory leaks
+  $scope.$on('$destroy', function() {
+    window.removeEventListener('resize', resizeCanvas);
+  });
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>signature_pad</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Signature Pad</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 12:46:49</sys_created_on>
+        <sys_id>f35c4078c3591210a7705fd1b401316c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Signature Pad</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_f35c4078c3591210a7705fd1b401316c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 15:06:18</sys_updated_on>
+        <template><![CDATA[<div>
+  <h3 class="col-12 text-center">
+    Sign Here
+  </h3>
+  <canvas id="signature-pad" style="border:1px solid #000; width: 100%; height: 300px;"></canvas>
+  <button ng-click="clearSignature()">Clear</button>
+  <button ng-click="saveSignature()">Save</button>
+  <img ng-if="signatureData" ng-src="{{signatureData}}" alt="Signature" style="margin-top: 10px;"/>
+</div>]]></template>
+    </sp_widget>
+</record_update>

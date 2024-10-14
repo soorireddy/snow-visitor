@@ -6,8 +6,10 @@
 	c.isNative = cabrillo.isNative();
 	$scope.m = $scope.data.msgs;
 	$scope.step = 1;
-	
-	
+	$scope.leftNav= [];
+	$scope.activeSection = {};
+	$scope.previousActiveSection = {};
+
 	$scope.hasMandatory = function() {
 		return c.mandatory && c.mandatory.length > 0;
 	};
@@ -21,38 +23,44 @@
 	$scope.server.get({
 		sys_id: recordProducerSysId
 	}).then(function(response) {
-		$scope.sc_cat_item = response.data.recordProducer;
-		//console.log(" sc cat "+ JSON.stringify($scope.sc_cat_item.sys_id));
+		var sc_cat_item_local = response.data.recordProducer;
+		var number_seq = 1;
+		for(var index in sc_cat_item_local._sections){
+			var vsitem =  sc_cat_item_local._sections[index];
+			var section = {};
+			section.sequence = number_seq;
+			section.name = vsitem.caption;
+			section.id = vsitem.id;
+			$scope.leftNav.push(section);
+			number_seq = number_seq+1 ;
+		}
+		$scope.activateFirstSection(sc_cat_item_local);
 	});
+
+	$scope.activateFirstSection = function(sc_cat_item_local) {
+		for(var ccindex in $scope.leftNav){
+				var hidesection = $scope.leftNav[ccindex];
+				console.log(JSON.stringify(hidesection));
+				sc_cat_item_local._fields[hidesection.id]._visible = false; 
+			sc_cat_item_local._fields[hidesection.id].visible = false; 
+		}
+		$scope.sc_cat_item = sc_cat_item_local;
+		$scope.changeStep($scope.leftNav[0]);
 	
-	/* $rootScope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
-		console.log(" CATALOG ITEM SELECTOR 1");
-		CatalogItemSectionHandler.load($scope.sc_cat_item.sys_id, gFormInstance);
-	}); */ 
-	
-	$scope.changeStep = function(stepId) {
-		$scope.step = stepId;
-		console.log("changeStep called with stepId: " + stepId);
-		$scope.server.get({ step: stepId }).then(function(response) {
-      console.log("Response from server: ", response);   
-			var visibilityConfig = response.data.visibleVariableSets;
-       console.log($scope.sc_cat_item);
-         if (visibilityConfig) {
-             for (var variableSet in visibilityConfig) {
-                  var isVisible = visibilityConfig[variableSet];
-                  console.log("Setting visibility for "+ variableSet +" " +isVisible);
-									 if ($scope.sc_cat_item._fields[variableSet]) {
-										 console.log("variable set found");
-										$scope.sc_cat_item._fields[variableSet]._visible = isVisible; 
-									} else {
-										console.log("Variable set not found in sc_cat_item.");
-									}
-									
-                }
-            }
-        });
-		
-   };
+	};
+
+	$scope.changeStep = function(section) {
+		$scope.step = section.sequence;
+		$scope.previousActiveSection = $scope.activeSection;
+		$scope.activeSection = section;
+		$scope.sc_cat_item._fields[section.id]._visible = true; 
+			$scope.sc_cat_item._fields[section.id].visible = true; 
+		if($scope.previousActiveSection && $scope.previousActiveSection.id){
+			$scope.sc_cat_item._fields[$scope.previousActiveSection.id].visible = false;
+			$scope.sc_cat_item._fields[$scope.previousActiveSection.id]._visible = false; 
+		}
+
+	};
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Common Stepper Styles */
@@ -445,14 +453,14 @@ $sp-space--xxs: 2px !default;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-02 14:34:26</sys_created_on>
         <sys_id>bbb1b230c3411210a7705fd1b401314b</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>131</sys_mod_count>
         <sys_name>Alert Catalog Item</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_bbb1b230c3411210a7705fd1b401314b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 05:08:32</sys_updated_on>
+        <sys_updated_on>2024-10-14 18:33:34</sys_updated_on>
         <template><![CDATA[<div ng-if="::!data.recordFound" class="alert alert-info">{{::m.invalidRecordMsg}}</div>
 <div ng-if="data.recordFound">
   <div class="row">
@@ -462,6 +470,7 @@ $sp-space--xxs: 2px !default;
         <div class="panel-heading">Sections</div>
         <div class="panel-body">
           <ul class="stepper" ng-class="{'vertical-stepper': isLargeScreen, 'horizontal-stepper': !isLargeScreen}">
+             <!--
             <li class="step" ng-click="changeStep(1)" ng-class="{'active': step === 1}">
               <div class="step-number">1</div>
               <div class="step-description">Visit Info</div>
@@ -489,7 +498,12 @@ $sp-space--xxs: 2px !default;
             <li class="step" ng-click="changeStep(7)"  ng-class="{'active': step === 7}">
               <div class="step-number">7</div>
               <div class="step-description">Summary</div>
+            </li> -->
+            <li class="step" ng-repeat="section in leftNav" ng-click="changeStep(section)"  ng-class="{'active': step === section.sequence}">
+              <div class="step-number">{{section.sequence}}</div>
+              <div class="step-description">{{section.name}}</div>
             </li>
+            
           </ul>
         </div>
       </div>

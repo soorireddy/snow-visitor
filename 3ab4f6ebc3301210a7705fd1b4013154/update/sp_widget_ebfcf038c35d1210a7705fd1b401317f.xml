@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>visitor_checkin_success</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Visitor Check In Success</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:19:49</sys_created_on>
+        <sys_id>ebfcf038c35d1210a7705fd1b401317f</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Visitor Check In Success</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sp_widget_ebfcf038c35d1210a7705fd1b401317f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:48:06</sys_updated_on>
+        <template><![CDATA[<div text-center> 
+  <div class="row col-12 text-center" >
+    <i class="fa fa-check" style="border:1px solid green; width:125px; height:125px;border-radius:50%;font-size:120px;color:darkgreen;" aria-hidden="true"></i>
+  </div>
+  <div class="row col-12 text-center">
+    <h3>
+      You have successfully checked in.
+    </h3>
+  </div>
+  <div class="row col-6 text-center">
+    <button class="btn btn-primary btn-block m-l m-r m-t">Print Badge</button>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ebfcf038c35d1210a7705fd1b401317f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 16:19:48</sys_created_on>
+        <sys_id>371d7038c35d1210a7705fd1b4013110</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 16:19:48</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
