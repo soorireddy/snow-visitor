@@ -61,32 +61,40 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-04 09:17:47</sys_created_on>
         <sys_id>d0acb351c34512107afbfc0ed40131f2</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>QR Code Generator</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_d0acb351c34512107afbfc0ed40131f2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-04 10:00:57</sys_updated_on>
-        <template><![CDATA[<div class="qr-code-generator">
-  <h3>QR Code Generator</h3>
+        <sys_updated_on>2024-10-14 11:59:04</sys_updated_on>
+        <template><![CDATA[<html>
+	<script src="https://cdn.jsdelivr.net/npm/bwip-js@2.0.9/dist/bwip-js-min.js"></script>
+  <head>
+    </head>
+    <body>
+      <div class="qr-code-generator">
+      <h3>QR Code Generator</h3>
 
-  <div>
-    <label for="qr-input">Enter Data for QR Code:</label>
-    <input type="text" id="qr-input" ng-model="c.qrData" placeholder="Enter text or URL" />
-  </div>
+      <div>
+        <label for="qr-input">Enter Data for QR Code:</label>
+        <input type="text" id="qr-input" ng-model="c.qrData" placeholder="Enter text or URL" />
+      </div>
 
-  <div>
-    <button ng-click="c.generateQRCode()" class="btn btn-primary">Generate QR Code</button>
-  </div>
+      <div>
+        <button ng-click="c.generateQRCode()" class="btn btn-primary">Generate QR Code</button>
+      </div>
 
-  <canvas id="qr-canvas" width="200" height="200" style="border:1px solid #000;"></canvas>
+      <canvas id="qr-canvas" width="200" height="200" style="border:1px solid #000;"></canvas>
 
-  <div ng-if="c.errorMessage" class="alert alert-danger">
-    {{c.errorMessage}}
-  </div>
-</div>
+      <div ng-if="c.errorMessage" class="alert alert-danger">
+        {{c.errorMessage}}
+      </div>
+    </div>
+    </body>
+</html>
+
 ]]></template>
     </sp_widget>
 </record_update>
