@@ -8,7 +8,7 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</cat_item>
-        <cat_variable>IO:ef9d5780c3851210a7705fd1b4013116</cat_variable>
+        <cat_variable>IO:383dbeacc3911210a7705fd1b401311a</cat_variable>
         <condition/>
         <description/>
         <field/>
@@ -23,25 +23,15 @@
         return;
     }
     var startDate = newValue;
-    var visType = g_form.getValue('v_visit_type');
-	console.log("start date "+ startDate+" visit type  "+ visType);
-    //Time zone?
-    // script include to get end date
+    var visType = g_form.getValue('visit_visit_type');
     var glideAjax = new GlideAjax('GetVisitEndDate');
     glideAjax.addParam('sysparm_name','getEndDate');
     glideAjax.addParam('sysparm_start_date', startDate);
     glideAjax.addParam('sysparm_vis_type', visType);
     glideAjax.getXMLAnswer(getResponse);
-
     function getResponse(response) {
-		//console.log("Response "+ response.responseXML.documentElement.getAttribute("answer"));
-        //var endDate = response.responseXML.documentElement.getAttribute("answer");
-		g_form.setValue('end_date',response);
-        console.log("Response :::: " + response);
+		g_form.setValue('visit_end_date',response);
     }
-	
-    //Type appropriate comment here, and begin script below
-
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -49,7 +39,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>21b7eac1c3815210a7705fd1b4013127</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Visit End Date Validation </sys_name>
         <sys_overrides/>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
@@ -57,7 +47,7 @@
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>catalog_script_client_21b7eac1c3815210a7705fd1b4013127</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 09:28:23</sys_updated_on>
+        <sys_updated_on>2024-10-14 10:21:26</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

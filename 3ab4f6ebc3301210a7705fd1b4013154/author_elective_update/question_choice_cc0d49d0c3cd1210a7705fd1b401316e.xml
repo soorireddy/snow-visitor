@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>20</order>
+        <published_ref/>
+        <question display_value="Visit Type">94504dd0c38d1210a7705fd1b40131a7</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 17:57:16</sys_created_on>
+        <sys_id>cc0d49d0c3cd1210a7705fd1b401316e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>-----     Select    -----</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>question_choice_cc0d49d0c3cd1210a7705fd1b401316e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 17:57:16</sys_updated_on>
+        <text>-----     Select    -----</text>
+        <value>SELECT</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=cc0d49d0c3cd1210a7705fd1b401316e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>question_choice_cc0d49d0c3cd1210a7705fd1b401316e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>20</order><published_ref/><question display_value="Visit Type">94504dd0c38d1210a7705fd1b40131a7</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-30 17:57:16</sys_created_on><sys_id>cc0d49d0c3cd1210a7705fd1b401316e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>-----     Select    -----</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>question_choice_cc0d49d0c3cd1210a7705fd1b401316e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-30 17:57:16</sys_updated_on><text>-----     Select    -----</text><value>SELECT</value></question_choice><fx_price action="delete_multiple" query="id=cc0d49d0c3cd1210a7705fd1b401316e"/></record_update>]]></payload>
+        <payload_hash>-246480880</payload_hash>
+        <record_name>-----     Select    -----</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 17:57:16</sys_created_on>
+        <sys_id>7e2d4d54c3cd1210a7705fd1b4013116</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192441457060000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 17:57:16</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>722d4d546fcd1210ba10345879d3cd16</update_guid>
+        <update_guid_history>722d4d546fcd1210ba10345879d3cd16:-246480880</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="-----     Select    -----">075ce320c3d51210a7705fd1b40131cf</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 10:26:57</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>0c659c25d4c8443482f4033703bc42a9</sys_id>
+        <sys_metadata>cc0d49d0c3cd1210a7705fd1b401316e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>-----     Select    -----</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent display_value="Visit Type">94504dd0c38d1210a7705fd1b40131a7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>question_choice_cc0d49d0c3cd1210a7705fd1b401316e</sys_update_name>
+        <sys_update_version display_value="question_choice_cc0d49d0c3cd1210a7705fd1b401316e">7e2d4d54c3cd1210a7705fd1b4013116</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 10:26:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

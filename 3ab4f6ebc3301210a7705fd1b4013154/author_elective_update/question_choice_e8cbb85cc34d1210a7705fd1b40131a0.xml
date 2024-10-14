@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>50</order>
+        <published_ref/>
+        <question display_value="Existing Visitor">8c29f018c34d1210a7705fd1b40131ce</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 16:41:55</sys_created_on>
+        <sys_id>e8cbb85cc34d1210a7705fd1b40131a0</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Yes , Lookup Existing  Visitor</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>question_choice_e8cbb85cc34d1210a7705fd1b40131a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 17:32:24</sys_updated_on>
+        <text>Yes , Lookup Existing  Visitor</text>
+        <value>YES</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=e8cbb85cc34d1210a7705fd1b40131a0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</application>
+        <file_path/>
+        <instance_id>32376ab41b0e7198699443f4bd4bcbfb</instance_id>
+        <instance_name>dev191029</instance_name>
+        <name>question_choice_e8cbb85cc34d1210a7705fd1b40131a0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>50</order><published_ref/><question display_value="Existing Visitor">8c29f018c34d1210a7705fd1b40131ce</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-30 16:41:55</sys_created_on><sys_id>e8cbb85cc34d1210a7705fd1b40131a0</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Yes , Lookup Existing  Visitor</sys_name><sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package><sys_policy/><sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope><sys_update_name>question_choice_e8cbb85cc34d1210a7705fd1b40131a0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-30 17:32:24</sys_updated_on><text>Yes , Lookup Existing  Visitor</text><value>YES</value></question_choice><fx_price action="delete_multiple" query="id=e8cbb85cc34d1210a7705fd1b40131a0"/></record_update>]]></payload>
+        <payload_hash>-2119399785</payload_hash>
+        <record_name>Yes , Lookup Existing  Visitor</record_name>
+        <reverted_from/>
+        <source>29ad3684c3c11210a7705fd1b40131aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 17:32:24</sys_created_on>
+        <sys_id>22774d5cc38d1210a7705fd1b401316d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19243fd92480000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 17:32:24</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>e6774d5c6e8d121033e4bf69f153cd6c</update_guid>
+        <update_guid_history>e6774d5c6e8d121033e4bf69f153cd6c:-2119399785,0467c95ca58d1210f3598acdffef1646:-904914429,c37c3c9cef4d1210763bf746aed62c0d:1085779363,55fb309c384d1210a6a7fd1b3250ae23:554468527,13ebfc5c444d12109d04fb0fd67e1c71:1541345397</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Yes , Lookup Existing  Visitor">4ab15f68c3151210a7705fd1b4013156</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 08:30:34</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>61b50d3f445f4f14961d657d9b3bed90</sys_id>
+        <sys_metadata>e8cbb85cc34d1210a7705fd1b40131a0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Yes , Lookup Existing  Visitor</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_scope_delete display_value="">e9e2c45299ed4c98a68cdb34d29bdd21</sys_scope_delete>
+        <sys_update_name>question_choice_e8cbb85cc34d1210a7705fd1b40131a0</sys_update_name>
+        <sys_update_version display_value="question_choice_e8cbb85cc34d1210a7705fd1b40131a0">22774d5cc38d1210a7705fd1b401316d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 08:30:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

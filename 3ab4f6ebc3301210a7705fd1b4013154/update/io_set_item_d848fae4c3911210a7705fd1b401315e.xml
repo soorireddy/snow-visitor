@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="INSERT_OR_UPDATE">
+        <order>1</order>
+        <sc_cat_item display_value="Check in">96d7b2e4c3911210a7705fd1b401318f</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-14 06:40:23</sys_created_on>
+        <sys_id>d848fae4c3911210a7705fd1b401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visitor Checkin Home.Check in</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>io_set_item_d848fae4c3911210a7705fd1b401315e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-14 06:40:23</sys_updated_on>
+        <variable_set display_value="Visit Checkin Home">1e58bee4c3911210a7705fd1b4013113</variable_set>
+    </io_set_item>
+</record_update>

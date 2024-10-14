@@ -8,7 +8,7 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Create Visit">71f7ba8cc3811210a7705fd1b4013115</cat_item>
-        <cat_variable>IO:9a51eb10c3c95210a7705fd1b40131ed</cat_variable>
+        <cat_variable>IO:e7499be0c3551210a7705fd1b401313b</cat_variable>
         <condition/>
         <description/>
         <field/>
@@ -19,22 +19,19 @@
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-   if (isLoading || newValue == '') {
-      return;
-   }
+    if (isLoading || newValue == '') {
+        return;
+    }
+    var attachment = g_form.getValue('visit_visitor_attachment');
+    var ga = new GlideAjax('MRVS_util');
+    ga.addParam('sysparm_name', 'fetchCSVData');
+    ga.addParam('sysparm_cart_id', attachment);
+    ga.getXMLAnswer(getResponse);
 
-   var attachment = g_form.getValue('upload_visitor_data');
-   console.log("Attachment :::: "+attachment);
-   var ga = new GlideAjax('MRVS_util');
-   ga.addParam('sysparm_name','fetchCSVData');
-   ga.addParam('sysparm_cart_id',attachment);
-   ga.getXMLAnswer(getResponse);
+    function getResponse(response) {
+        g_form.setValue('visit_visitor_mrvs', response);
+    }
 
-   function getResponse(response){
-		g_form.setValue('visitor_group_variable_set',response);
-		console.log("Response :::: "+response);
-   }
-   
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -42,7 +39,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9404a350c3c95210a7705fd1b4013133</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Process Uploaded Data</sys_name>
         <sys_overrides/>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
@@ -50,7 +47,7 @@
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>catalog_script_client_9404a350c3c95210a7705fd1b4013133</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 06:09:25</sys_updated_on>
+        <sys_updated_on>2024-10-14 10:45:41</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

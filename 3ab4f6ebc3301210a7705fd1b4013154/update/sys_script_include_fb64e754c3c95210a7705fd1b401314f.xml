@@ -22,10 +22,10 @@ MRVS_util.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         for (var i = 0; i < csvData.length; i++) {
             var row = csvData[i].split(',');
             var rowObject = {};
-            rowObject.vistor_first_name = row[0];
-            rowObject.visitor_last_name = row[1];
-            rowObject.visitor_email = row[2];
-            rowObject.visitor_phone = row[3];
+            rowObject.visit_vistor_first_name = row[0];
+            rowObject.visit_visitor_last_name = row[1];
+            rowObject.visit_visitor_email = row[2];
+            rowObject.visit_visitor_phone = row[3];
             data.push(rowObject);
         }
 		data.pop();
@@ -39,14 +39,14 @@ MRVS_util.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-01 05:51:43</sys_created_on>
         <sys_id>fb64e754c3c95210a7705fd1b401314f</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>MRVS_util</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sys_script_include_fb64e754c3c95210a7705fd1b401314f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-01 06:37:42</sys_updated_on>
+        <sys_updated_on>2024-10-14 10:41:49</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>fb64e754c3c95210a7705fd1b401314f</id>

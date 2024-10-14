@@ -41,7 +41,7 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>visitor_phone</name>
+        <name>visit_visitor_phone</name>
         <order>400</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
@@ -77,14 +77,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-30 16:49:28</sys_created_on>
         <sys_id>4d9d30dcc34d1210a7705fd1b4013171</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>phone</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>visit_visitor_phone</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>item_option_new_4d9d30dcc34d1210a7705fd1b4013171</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 16:49:28</sys_updated_on>
+        <sys_updated_on>2024-10-14 07:59:30</sys_updated_on>
         <table/>
         <tooltip/>
         <type>6</type>
@@ -94,7 +94,7 @@
         <use_reference_qualifier>simple</use_reference_qualifier>
         <validate_regex/>
         <variable_name/>
-        <variable_set display_value="Visitor Details (Group)">19cfaf84c3c51210a7705fd1b401318a</variable_set>
+        <variable_set display_value="Visit Visitor MRVS">19cfaf84c3c51210a7705fd1b401318a</variable_set>
         <variable_width/>
         <visibility>1</visibility>
         <visible_bundle>true</visible_bundle>

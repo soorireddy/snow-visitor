@@ -4,6 +4,7 @@
         <client_script><![CDATA[function loginCtrl($scope, $http, $window) {
 	var c = this;
 	$scope.otp = '';
+	$scope.email = '';
 	$scope.otpValidated = false;
 	$scope.loginError = '';
 	c.data.url_suffix = $scope.portal ? $scope.portal.url_suffix : "";
@@ -31,7 +32,7 @@
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}
 		}).then(function (response) {
-				if (!response.data) {
+			if (!response.data) {
 				$scope.loginError = $scope.data.errorMsg;
 				return;
 			}
@@ -131,7 +132,7 @@
         <description>Visitor Login</description>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>visitor-login</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -150,14 +151,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-03 18:15:59</sys_created_on>
         <sys_id>123eac9dc38512107afbfc0ed4013142</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Visitor Login</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_123eac9dc38512107afbfc0ed4013142</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 18:39:03</sys_updated_on>
+        <sys_updated_on>2024-10-14 05:59:41</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default login-panel">
   <div class="panel-heading">
     <h3 class="panel-title">Login with OTP</h3>
@@ -166,8 +167,12 @@
     <div ng-if="!otpValidated">
       <p>Please enter the One-Time Password (OTP) sent to your registered e-mail to proceed.</p>
       <div class="form-group">
+        <label for="email">Enter Email</label>
+        <input type="text" id="email" class="form-control" ng-model="email" placeholder="Enter your Email" />
+      </div>
+      <div class="form-group">
         <label for="otp">Enter OTP</label>
-        <input type="text" id="otp" class="form-control" ng-model="otp" placeholder="Enter your OTP" />
+        <input type="password" id="otp" class="form-control" ng-model="otp" placeholder="Enter your OTP" />
       </div>
       <button class="btn btn-primary btn-block" ng-click="c.login()">Submit OTP</button>
     </div>

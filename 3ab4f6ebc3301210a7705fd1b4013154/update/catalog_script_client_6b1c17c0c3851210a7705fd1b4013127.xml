@@ -15,40 +15,31 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Show Questionarre based on type</name>
+        <name>Show Variablesets based on Visitor Type</name>
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
         return;
     }
-    g_form.setDisplay('grp_name', false);
-    g_form.setDisplay('visitor_group_variable_set', false);
-    g_form.setDisplay('existing_visitor', false);
-    g_form.setDisplay('visitor', false);
-    g_form.setDisplay('health_question_variable_set', false);
-    g_form.setDisplay('host_details_variable_set', false);
-    g_form.setDisplay('upload_visitor_data', false);
-    g_form.setReadOnly('end_date', true);
+    g_form.setDisplay('visit_visitor_details', false);
+    g_form.setDisplay('visit_visitor_group', false);
+    g_form.setDisplay('visit_visitor_mrvs', false);
+    g_form.setDisplay('health_questions', false);
+    g_form.setDisplay('host_details', false);
     var type = newValue;
     if (type == 'WALK-IN') {
-        g_form.setDisplay('health_question_variable_set', true);
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
+        g_form.setDisplay('visit_visitor_details', true);
+        g_form.setDisplay('health_questions', true);
     } else if (type == 'PRE-REGISTERED') {
-        g_form.setDisplay('host_details_variable_set', true);
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
+        g_form.setDisplay('visit_visitor_details', true);
+        g_form.setDisplay('host_details', true);
     } else if (type == 'GROUP') {
-        g_form.setDisplay('upload_visitor_data', true);
-        g_form.setDisplay('grp_name', true);
-        g_form.setDisplay('visitor_group_variable_set', true);
+        g_form.setDisplay('visit_visitor_group', true);
+        g_form.setDisplay('visit_visitor_mrvs', true);
     } else if (type == 'SINGLE') {
-        g_form.setDisplay('existing_visitor', true);
-        g_form.setDisplay('visitor', true);
-    } else {
-        g_form.setReadOnly('end_date', false);
-    }
+        g_form.setDisplay('visit_visitor_details', true);
+    } 
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -56,15 +47,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6b1c17c0c3851210a7705fd1b4013127</sys_id>
-        <sys_mod_count>17</sys_mod_count>
-        <sys_name>Show Questionarre based on type</sys_name>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Show Variablesets based on Visitor Type</sys_name>
         <sys_overrides/>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>catalog_script_client_6b1c17c0c3851210a7705fd1b4013127</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-03 08:55:59</sys_updated_on>
+        <sys_updated_on>2024-10-14 09:41:28</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
