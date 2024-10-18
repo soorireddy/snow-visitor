@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_escort" label="Escort" language="en" table="var__m_sys_decision_multi_result_element_943d97bcc3595210a7705fd1b4013108">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_escort</element>
+            <help/>
+            <hint/>
+            <label>Escort</label>
+            <language>en</language>
+            <name>var__m_sys_decision_multi_result_element_943d97bcc3595210a7705fd1b4013108</name>
+            <plural>Escort</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-10-15 04:57:10</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Escort</sys_name>
+            <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_decision_multi_result_element_943d97bcc3595210a7705fd1b4013108_u_escort_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-10-15 04:57:10</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

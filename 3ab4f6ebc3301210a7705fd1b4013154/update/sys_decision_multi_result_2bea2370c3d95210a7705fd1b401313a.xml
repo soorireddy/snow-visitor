@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_decision_multi_result">
+    <sys_decision_multi_result action="INSERT_OR_UPDATE">
+        <decision_table display_value="Checkin Process">943d97bcc3595210a7705fd1b4013108</decision_table>
+        <label>Host: false, Escort: false, Misc: false, PhotoCapture: false, Health: true, NDA: false, ID Verification: false, Check Watchlist: true</label>
+        <result_elements/>
+        <sys_class_name>sys_decision_multi_result</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2bea2370c3d95210a7705fd1b401313a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Host: false, Escort: false, Misc: false, PhotoCapture: false, Health: true, NDA: false, ID Verification: false, Check Watchlist: true</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sys_decision_multi_result_2bea2370c3d95210a7705fd1b401313a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+    </sys_decision_multi_result>
+    <sys_variable_value action="delete_multiple" query="document_key=2bea2370c3d95210a7705fd1b401313a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>2bea2370c3d95210a7705fd1b401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>1</value>
+        <variable display_value="Check Watchlist">57ea6730c3d95210a7705fd1b40131f5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>2fea2370c3d95210a7705fd1b401313a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Host">0e7a6730c3d95210a7705fd1b4013168</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>150</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>63ea2370c3d95210a7705fd1b401313c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="ID Verification">797a6730c3d95210a7705fd1b401312d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>67ea2370c3d95210a7705fd1b401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="PhotoCapture">f57a6730c3d95210a7705fd1b4013157</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>a3ea2370c3d95210a7705fd1b401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Misc">0e7a6730c3d95210a7705fd1b40131cf</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>afea2370c3d95210a7705fd1b401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="NDA">f57a6730c3d95210a7705fd1b401311b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>ebea2370c3d95210a7705fd1b401313b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>1</value>
+        <variable display_value="Health">867a6730c3d95210a7705fd1b40131b1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>2bea2370c3d95210a7705fd1b401313a</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 04:59:11</sys_created_on>
+        <sys_id>efea2370c3d95210a7705fd1b401313a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 04:59:11</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Escort">467a6730c3d95210a7705fd1b401317a</variable>
+    </sys_variable_value>
+</record_update>

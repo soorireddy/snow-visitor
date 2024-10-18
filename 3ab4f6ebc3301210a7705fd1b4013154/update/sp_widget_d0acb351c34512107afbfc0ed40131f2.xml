@@ -11,11 +11,19 @@
 			c.errorMessage = 'Please enter data to generate a QR code.';
 			return;                 // Exit if input is empty
 		}
+		
+		var expirationTime = new Date(Date.now() + 10 * 60 * 1000);  // 1 min expiry
+        var qrPayload = {
+            data: c.qrData,
+            expiresAt: expirationTime.toISOString()
+        };
+		
 		try {
 			// Generate the QR code using bwip-js
 			bwipjs.toCanvas('qr-canvas', {
 				bcid: 'qrcode',       // Barcode type
-				text: c.qrData,       // Text or URL to encode
+				//text: c.qrData,       // Text or URL to encode
+				text: JSON.stringify(qrPayload),
 				scale: 3,             // Scale factor
 				height: 10,           // Height of the barcode
 				width: 10,            // Width of the barcode
@@ -61,14 +69,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-10-04 09:17:47</sys_created_on>
         <sys_id>d0acb351c34512107afbfc0ed40131f2</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>QR Code Generator</sys_name>
         <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
         <sys_policy/>
         <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
         <sys_update_name>sp_widget_d0acb351c34512107afbfc0ed40131f2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-10-14 11:59:04</sys_updated_on>
+        <sys_updated_on>2024-10-15 14:13:59</sys_updated_on>
         <template><![CDATA[<html>
 	<script src="https://cdn.jsdelivr.net/npm/bwip-js@2.0.9/dist/bwip-js-min.js"></script>
   <head>

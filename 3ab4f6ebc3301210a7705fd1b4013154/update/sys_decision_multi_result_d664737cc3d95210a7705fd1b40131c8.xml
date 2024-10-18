@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_decision_multi_result">
+    <sys_decision_multi_result action="INSERT_OR_UPDATE">
+        <decision_table display_value="Location Settings">81d07bf4c3d95210a7705fd1b4013131</decision_table>
+        <label>Visit Duration:  4 Hours , Max Group Size: 20, Bulk Print: true</label>
+        <result_elements/>
+        <sys_class_name>sys_decision_multi_result</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 05:40:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d664737cc3d95210a7705fd1b40131c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Visit Duration:  4 Hours , Max Group Size: 20, Bulk Print: true</sys_name>
+        <sys_package display_value="Visitor Management" source="x_845458_visitorsa">3ab4f6ebc3301210a7705fd1b4013154</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Visitor Management">3ab4f6ebc3301210a7705fd1b4013154</sys_scope>
+        <sys_update_name>sys_decision_multi_result_d664737cc3d95210a7705fd1b40131c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 05:40:37</sys_updated_on>
+    </sys_decision_multi_result>
+    <sys_variable_value action="delete_multiple" query="document_key=d664737cc3d95210a7705fd1b40131c8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>d664737cc3d95210a7705fd1b40131c8</document_key>
+        <order>125</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 05:40:37</sys_created_on>
+        <sys_id>6264737cc3d95210a7705fd1b40131c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 05:40:37</sys_updated_on>
+        <value>20</value>
+        <variable display_value="Max Group Size">0664737cc3d95210a7705fd1b4013168</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>d664737cc3d95210a7705fd1b40131c8</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 05:40:37</sys_created_on>
+        <sys_id>ae64737cc3d95210a7705fd1b40131c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 05:40:37</sys_updated_on>
+        <value>1970-01-01 04:00:00</value>
+        <variable display_value="Visit Duration">9dd0bb38c3d95210a7705fd1b40131ba</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_decision_multi_result</document>
+        <document_key>d664737cc3d95210a7705fd1b40131c8</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-10-15 05:40:37</sys_created_on>
+        <sys_id>ea64737cc3d95210a7705fd1b40131c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-10-15 05:40:37</sys_updated_on>
+        <value>1</value>
+        <variable display_value="Bulk Print">85d0bb38c3d95210a7705fd1b401318f</variable>
+    </sys_variable_value>
+</record_update>
